@@ -14,95 +14,191 @@
          "description": "Log output to console"
       }
    */
-   // common funtions
+
+// predefined variables
+   "Digits": {
+      "prefix":"digits",
+      "body":"_Digits$0",
+      "description":"Number of decimal places"
+   },
+   "Point":{
+      "prefix": "point",   
+      "body": "_Point$0",
+      "description": "Size of the current symbol point in the quote currency"
+   },
+   "LastError":{
+      "prefix": "lasterror",   
+      "body": "_LastError$0",
+      "description": "The last error code"
+   },
+   "_Period":{
+      "prefix": "period",   
+      "body": "_Period$0",
+      "description": "The _Period variable contains the value of the timeframe of the current chart."
+   },
+   "_RandomSeed":{
+      "prefix": "rand",   
+      "body": "_RandomSeed$0",
+      "description": "Variable for storing the current state when generating pseudo-random integers"
+   },
+  
+   "_StopFlag":{
+      "prefix": "stopflag",   
+      "body": "_StopFlag$0",
+      "description": "contains the flag of the mql5-program stop"
+   },
+   "_UninitReason":{
+      "prefix": "uninit",   
+      "body": "_UninitReason$0",
+      "description": "contains the code of the program uninitialization reason."
+   },
+   //MQL4 vars
+   "Bid":{
+      "prefix": "bid",   
+      "body": "Bid$0",
+      "description": "bid"
+   },
+   "Ask":{
+      "prefix": "ask",   
+      "body": "Ask$0",
+      "description": "ask"
+   },
+   "Open":{
+      "prefix": "open",   
+      "body": "Open[${1:i}]$0",
+      "description": "Series array that contains open prices of each bar of the current chart"
+   },
+   "High":{
+      "prefix": "high",   
+      "body": "High[${1:i}]$0",
+      "description": "Series array that contains high prices of each bar of the current chart"
+   },
+   "Low":{
+      "prefix": "low",   
+      "body": "Low[${1:i}]$0",
+      "description": "Series array that contains low prices of each bar of the current chart"
+   },
+   "Close":{
+      "prefix": "close",   
+      "body": "Open[${1:i}]$0",
+      "description": "Series array that contains close prices of each bar of the current chart"
+   },
+   "Time":{
+      "prefix": "time",   
+      "body": "Time[${1:i}]$0",
+      "description": "Series array that contains time of each bar of the current chart"
+   },
+   "Volume":{
+      "prefix": "volume",   
+      "body": "Volume[${1:i}]$0",
+      "description": "Series array that contains volume of each bar of the current chart"
+   },
+   
+   
+// common funtions
       "Alert":{
          "prefix": "alert",
-         "body": "Alert(${1:argument, ...})",
+         "body": "Alert(${1:argument, ...})$0",
          "description":"Displays a message in a separate window."
       },
       "Check Pointer":{
          "prefix": "check",
-         "body": "CheckPointer(${1:object* anytype})",
+         "body": "CheckPointer(${1:object* anytype})$0",
          "description":"The function returns the type of the object pointer."
       },
       "Comment":{
          "prefix": "comment",
-         "body": "Comment(${1:argument, ...})",
+         "body": "Comment(${1:argument, ...})$0",
          "description":"outputs a comment defined by a user in the top left corner of a chart."
+      },
+      "DebugBreak":{
+         "prefix": "debug",
+         "body": "DebugBreak()$0",
+         "description":"sets a debug break point"
       },
       "ExpertRemove":{
          "prefix": "expert",
-         "body": "ExpertRemove()",
+         "body": "ExpertRemove()$0",
          "description":"stops an Expert Advisor and unloads it from a chart."
       },
       "GetPointer":{
          "prefix": "get",
-         "body": "GetPointer(${1:object anytype})",
+         "body": "GetPointer(${1:object anytype})$0",
          "description":"returns the object pointer."
       },
       
       "GetTickCount":{
          "prefix": "get",
-         "body": "GetTickCount()",
+         "body": "GetTickCount()$0",
          "description":"returns the number of milliseconds that elapsed since the system start"
       },
       "GetMicrosecondCount":{
          "prefix": "get",
-         "body": "GetMicrosecondCount()",
+         "body": "GetMicrosecondCount()$0",
          "description":"returns the number of microseconds that have elapsed since the start of MQL5-program."
       },
       
       "MessageBox":{
          "prefix": "messagebox",
-         "body": "MessageBox(${1:string  text},${2:caption=NULL},${3:int flags})",
+         "body": "MessageBox(${1:string  text},${2:caption=NULL},${3:int flags})$0",
          "description":"t creates and shows a message box and manages it.."
       },
       "PeriodSeconds":{
          "prefix": "period",
-         "body": "PeriodSeconds(${1:ENUM_TIMEFRAMES=PERIOD_CURRENT})",
+         "body": "PeriodSeconds(${1:ENUM_TIMEFRAMES=PERIOD_CURRENT})$0",
          "description":"number of seconds in a period."
       },
       "PlaySound":{
          "prefix": "play",
-         "body": "PlaySound(${1:string  filename})",
+         "body": "PlaySound(${1:string  filename})$0",
          "description":" plays a sound file."
       },
       "Print":{
          "prefix": "print",
-         "body": "Print(${1:argument, ...})",
+         "body": "Print(${1:argument, ...})$0",
          "description":"enters a message in the Expert Advisor log. Parameters can be of any type."
       },
       "PrintFormat":{
          "prefix": "print",
-         "body": "PrintFormat(${1:string format_string},{2: ...})",
+         "body": "PrintFormat(${1:string format_string},{2: ...})$0",
          "description":"formats and enters sets of symbols and values in the Expert Advisor log in accordance with a preset format."
       },
       "ResetLastError":{
          "prefix": "error",
-         "body": "ResetLastError()",
+         "body": "ResetLastError()$0",
          "description":"Sets the value of the predefined variable _LastError into zero."
       },
       "SendNotification":{
          "prefix": "send",
-         "body": "SendNotification(${1:string text})",
+         "body": "SendNotification(${1:string text})$0",
          "description":"Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the \"Notifications\" tab.."
       },
       "SendMail":{
          "prefix": "send",
-         "body": "SendMail(${1:string subject},${2:string text})",
+         "body": "SendMail(${1:string subject},${2:string text})$0",
          "description":"Sends an email at the address specified in the settings window of the Email tab."
       },
       "Sleep":{
          "prefix": "sleep",
-         "body": "Sleep(${1:int milliseconds})",
+         "body": "Sleep(${1:int milliseconds})$0",
          "description":"The function suspends execution of the current Expert Advisor or script within a specified interval."
       },
       "TranslateKey":{
          "prefix": "char",
-         "body": "TranslateKey(${1:int key_code})",
+         "body": "TranslateKey(${1:int key_code})$0",
          "description":"Returns a Unicode character by a virtual key code considering the current input language and the status of control keys."
       },
-   // array funtions
+      "WebRequest":{
+         "prefix": "web",
+         "body": "WebRequest(${1:see docs})$0",
+         "description":"sends an HTTP request to a specified server. The function has two versions:"
+      },
+      "ZeroMemory":{
+         "prefix": "zero",
+         "body": "ZeroMemory(${1:void &variable})$0",
+         "description":"resets a variable passed to it by reference."
+      },
+// array funtions
       "ArraySize":{
          "prefix": "array",
          "body": "ArraySize(${1:const void&  array[]})",
@@ -133,14 +229,120 @@
          "body": "ArrayInitialize(${1:T array[]},${2:T value})$0",
          "description":"initializes a numeric array by a preset value."
       },
-   // conversion functions
+// conversion functions
       "CharToString":{
-         "prefix": "tostring",
+         "prefix": "char",
          "body": "CharToString(${1:uchar char_code})$0",
          "description":"Converting a symbol code into a one-character string."
       },
-   
-   // common code blocks
+      "CharArrayToString":{
+         "prefix": "char",
+         "body": "CharArrayToString(${1:uchar array[]},${2:int start},${3:int count=1},${4:uint code_page=CP_ACP})$0",
+         "description":"It copies and converts part of array of uchar type into a returned string.."
+      },
+      "ColorToString":{
+         "prefix": "color",
+         "body": "ColorToString(${1:color color},${2:bool show_color_name})$0",
+         "description":"It converts color value into string of R,G,B form."
+      },
+      "DoubleToString":{
+         "prefix": "double",
+         "body": "DoubleToString(${1:double value},${2:int digits=8})$0",
+         "description":"Converting numeric value into text string."
+      },
+      "EnumToString":{
+         "prefix": "enum",
+         "body": "EnumToString(${1:any_enum value})$0",
+         "description":"Converting an enumeration value of any type to a text form."
+      },
+      "TimeToString":{
+         "prefix": "time",
+         "body": "TimeToString(${1:datetime value},${2:int mode=TIME_DATE|TIME_MINUTES})$0",
+         "description":"Converting a value containing time in seconds elapsed since 01.01.1970 into a string of yyyy.mm.dd hh:mi format."
+      },
+
+      "NormalizeDouble":{
+         "prefix": "double",
+         "body": "NormalizeDouble(${1:double value},${2:int digits})$0",
+         "description":"Rounding floating point number to a specified accuracy."
+      },
+      "StringToCharArray":{
+         "prefix": "string",
+         "body": "StringToCharArray(${1:string text_string},${2:uchar& array[]},${3:int start=0},${4:int count=-1},${5:uint codepage=CP_ACP})$0",
+         "description":"Symbol-wise copies a string converted from Unicode to ANSI, to a selected place of array of uchar type. It returns the number of copied elements."
+      },
+      "StringToTime":{
+         "prefix": "string",
+         "body": "StringToTime(${1:string value})$0",
+         "description":"converts a string containing time or date in yyyy.mm.dd [hh:mi] format into datetime type."
+      },
+      "StringFormat":{
+         "prefix": "string",
+         "body": "StringFormat(${1:string format},${2:params...})$0",
+         "description":"The function formats obtained parameters and returns a string."
+      },
+// math functions
+   "MathAbs":{
+      "prefix": "math",
+      "body": "fabs(${1:double value})$0",
+      "description":"The function returns the absolute value (modulus) of the specified numeric value."
+   },
+   "MathCeil":{
+      "prefix": "math",
+      "body": "floor(${1:double value})$0",
+      "description":"The function returns integer numeric value closest from above."
+   },
+   "MathFloor":{
+      "prefix": "math",
+      "body": "fabs(${1:double value})$0",
+      "description":"The function returns integer numeric value closest from below."
+   },
+   "MathLog":{
+      "prefix": "math",
+      "body": "log(${1:double value})$0",
+      "description":"The function returns a natural logarithm."
+   },
+
+
+   "MathLog10":{
+      "prefix": "math",
+      "body": "log10(${1:double value})$0",
+      "description":"Returns the logarithm of a number by base 10."
+   },
+   "MathMax":{
+      "prefix": "math",
+      "body": "fmax(${1:double value1},${2:double value2})$0",
+      "description":" returns the maximal value of two values."
+   },
+   "MathMin":{
+      "prefix": "math",
+      "body": "fmin(${1:double value1},${2:double value2})$0",
+      "description":"returns the minimal value of two values."
+   },
+
+   "MathPow":{
+      "prefix": "math",
+      "body": "pow(${1:double value})$0",
+      "description":"The function raises a base to a specified power."
+   },
+   "MathRand":{
+      "prefix": "math",
+      "body": "rand()$0",
+      "description":"Returns a pseudorandom integer within the range of 0 to 32767."
+   },
+
+   "MathRound":{
+      "prefix": "math",
+      "body": "round()$0",
+      "description":"returns a value rounded off to the nearest integer of the specified numeric value."
+   },
+   "MathSqrt":{
+      "prefix": "math",
+      "body": "sqrt()$0",
+      "description":"Returns the square root of a number."
+   },
+
+// common code blocks
       //for
       "for OrdersTotal":{
          "prefix": "for",
