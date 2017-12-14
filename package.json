@@ -1,0 +1,21 @@
+{
+    "name": "mql-snippets",
+    "displayName": "mql-snippets",
+    "description": "MQL snippets for built Metatrader functions and common patterns",
+    "version": "0.0.3",
+    "publisher": "nicholishen",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "cpp",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}

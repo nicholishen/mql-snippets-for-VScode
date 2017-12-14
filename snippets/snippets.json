@@ -1,0 +1,159 @@
+{
+   /*
+      // Place your snippets for C++ here. Each snippet is defined under a snippet name and has a prefix, body and 
+      // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+      // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+      // same ids are connected.
+      // Example:
+      "Print to console": {
+         "prefix": "log",
+         "body": [
+            "console.log('$1');",
+            "$2"
+         ],
+         "description": "Log output to console"
+      }
+   */
+   // common funtions
+      "Alert":{
+         "prefix": "alert",
+         "body": "Alert(${1:argument, ...})",
+         "description":"Displays a message in a separate window."
+      },
+      "Check Pointer":{
+         "prefix": "check",
+         "body": "CheckPointer(${1:object* anytype})",
+         "description":"The function returns the type of the object pointer."
+      },
+      "Comment":{
+         "prefix": "comment",
+         "body": "Comment(${1:argument, ...})",
+         "description":"outputs a comment defined by a user in the top left corner of a chart."
+      },
+      "ExpertRemove":{
+         "prefix": "expert",
+         "body": "ExpertRemove()",
+         "description":"stops an Expert Advisor and unloads it from a chart."
+      },
+      "GetPointer":{
+         "prefix": "get",
+         "body": "GetPointer(${1:object anytype})",
+         "description":"returns the object pointer."
+      },
+      
+      "GetTickCount":{
+         "prefix": "get",
+         "body": "GetTickCount()",
+         "description":"returns the number of milliseconds that elapsed since the system start"
+      },
+      "GetMicrosecondCount":{
+         "prefix": "get",
+         "body": "GetMicrosecondCount()",
+         "description":"returns the number of microseconds that have elapsed since the start of MQL5-program."
+      },
+      
+      "MessageBox":{
+         "prefix": "messagebox",
+         "body": "MessageBox(${1:string  text},${2:caption=NULL},${3:int flags})",
+         "description":"t creates and shows a message box and manages it.."
+      },
+      "PeriodSeconds":{
+         "prefix": "period",
+         "body": "PeriodSeconds(${1:ENUM_TIMEFRAMES=PERIOD_CURRENT})",
+         "description":"number of seconds in a period."
+      },
+      "PlaySound":{
+         "prefix": "play",
+         "body": "PlaySound(${1:string  filename})",
+         "description":" plays a sound file."
+      },
+      "Print":{
+         "prefix": "print",
+         "body": "Print(${1:argument, ...})",
+         "description":"enters a message in the Expert Advisor log. Parameters can be of any type."
+      },
+      "PrintFormat":{
+         "prefix": "print",
+         "body": "PrintFormat(${1:string format_string},{2: ...})",
+         "description":"formats and enters sets of symbols and values in the Expert Advisor log in accordance with a preset format."
+      },
+      "ResetLastError":{
+         "prefix": "error",
+         "body": "ResetLastError()",
+         "description":"Sets the value of the predefined variable _LastError into zero."
+      },
+      "SendNotification":{
+         "prefix": "send",
+         "body": "SendNotification(${1:string text})",
+         "description":"Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the \"Notifications\" tab.."
+      },
+      "SendMail":{
+         "prefix": "send",
+         "body": "SendMail(${1:string subject},${2:string text})",
+         "description":"Sends an email at the address specified in the settings window of the Email tab."
+      },
+      "Sleep":{
+         "prefix": "sleep",
+         "body": "Sleep(${1:int milliseconds})",
+         "description":"The function suspends execution of the current Expert Advisor or script within a specified interval."
+      },
+      "TranslateKey":{
+         "prefix": "char",
+         "body": "TranslateKey(${1:int key_code})",
+         "description":"Returns a Unicode character by a virtual key code considering the current input language and the status of control keys."
+      },
+   // array funtions
+      "ArraySize":{
+         "prefix": "array",
+         "body": "ArraySize(${1:const void&  array[]})",
+         "description":"The function returns the number of elements of a selected array.."
+      },
+      "ArrayIsSeries":{
+         "prefix": "array",
+         "body": "ArrayIsSeries(${1:const void&  array[]})$0",
+         "description":"The function checks whether an array is a timeseries."
+      },
+      "ArrayGetAsSeries":{
+         "prefix": "array",
+         "body": "ArrayGetAsSeries(${1:const void&  array[]})$0",
+         "description":"It checks direction of an array index.."
+      },
+      "ArraySetAsSeries":{
+         "prefix": "array",
+         "body": "ArrayIsSeries(${1:const void&  array[]})$0",
+         "description":"The function sets the AS_SERIES flag to a selected object of a dynamic array, and elements will be indexed like in timeseries."
+      },
+      "ArrayResize":{
+         "prefix": "array",
+         "body": "ArrayResize(${1:void&  array[]},${2:int new_size},${3:reserved_size=0})$0",
+         "description":"The function sets a new size for the first dimension"
+      },
+      "ArrayInitialize":{
+         "prefix": "array",
+         "body": "ArrayInitialize(${1:T array[]},${2:T value})$0",
+         "description":"initializes a numeric array by a preset value."
+      },
+   // conversion functions
+      "CharToString":{
+         "prefix": "tostring",
+         "body": "CharToString(${1:uchar char_code})$0",
+         "description":"Converting a symbol code into a one-character string."
+      },
+   
+   // common code blocks
+      //for
+      "for OrdersTotal":{
+         "prefix": "for",
+         "body": [
+            "for(int i=OrdersTotal()-1;i>=0;i--)",
+            "{",
+            "   if(OrderSelect(i,SELECT_BY_POS)&&OrderSymbol()==_Symbol ${1: other conditions})",
+            "   {",
+            "      $2",
+            "   }",
+            "}"
+            ],
+         "description": "mql4 orderselect loop"
+      }
+   
+   }
