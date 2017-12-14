@@ -32,5 +32,5 @@ Initial release of MQL snippets
 ### For more information
 
 * [MQ5 thread](https://www.mql5.com/en/forum/222553)
-
+* [Github](https://github.com/nicholishen/mql-snippets-for-VScode)
 **Enjoy!**

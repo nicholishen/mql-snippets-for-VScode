@@ -1,11 +1,11 @@
 {
     "name": "mql-snippets",
-    "displayName": "mql-snippets",
-    "description": "MQL snippets for built Metatrader functions and common patterns",
-    "version": "0.0.3",
+    "displayName": "MQL Snippets",
+    "description": "Snippets for the built-in MQL functions, constants, predefined variables, and common patterns",
+    "version": "0.0.5",
     "publisher": "nicholishen",
     "engines": {
-        "vscode": "^1.19.0"
+        "vscode": "^0.10.1"
     },
     "categories": [
         "Snippets"
@@ -17,5 +17,9 @@
                 "path": "./snippets/snippets.json"
             }
         ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nicholishen/mql-snippets-for-VScode"
     }
 }
