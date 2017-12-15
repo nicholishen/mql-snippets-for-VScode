@@ -7,7 +7,15 @@ Right now only a few functions are implemented as a test.
 Example common array functions can be accessed by typing in the keyword "array"
 
 
-## Features
+## Prefix keywords to invoke snippets
+```
+datetime       - functions related to datetime
+tostring   - functions that convert to strings
+string     - string functions
+math
+mqlstruct
+
+```
 
 
 ## Requirements
