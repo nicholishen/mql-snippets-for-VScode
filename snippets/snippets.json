@@ -19,328 +19,589 @@
    "Digits": {
       "prefix":"digits",
       "body":"_Digits$0",
-      "description":"Number of decimal places"
+      "description":"<int> Number of decimal places"
    },
    "Point":{
       "prefix": "point",   
       "body": "_Point$0",
-      "description": "Size of the current symbol point in the quote currency"
+      "description": "<double> Size of the current symbol point in the quote currency"
    },
    "LastError":{
       "prefix": "lasterror",   
       "body": "_LastError$0",
-      "description": "The last error code"
+      "description": "<int> last error code"
    },
    "_Period":{
       "prefix": "period",   
       "body": "_Period$0",
-      "description": "The _Period variable contains the value of the timeframe of the current chart."
+      "description": "<ENUM_TIMEFRAMES> value of the timeframe of the current chart."
    },
    "_RandomSeed":{
       "prefix": "rand",   
       "body": "_RandomSeed$0",
-      "description": "Variable for storing the current state when generating pseudo-random integers"
+      "description": "<int> Variable for storing the current state when generating pseudo-random integers"
    },
   
    "_StopFlag":{
       "prefix": "stopflag",   
       "body": "_StopFlag$0",
-      "description": "contains the flag of the mql5-program stop"
+      "description": "<bool> contains the flag of the mql5-program stop"
    },
    "_UninitReason":{
       "prefix": "uninit",   
       "body": "_UninitReason$0",
-      "description": "contains the code of the program uninitialization reason."
+      "description": "<int> contains the code of the program uninitialization reason."
    },
    //MQL4 vars
    "Bid":{
       "prefix": "bid",   
       "body": "Bid$0",
-      "description": "bid"
+      "description": "<double> bid"
    },
    "Ask":{
       "prefix": "ask",   
       "body": "Ask$0",
-      "description": "ask"
+      "description": "<double> ask"
    },
    "Open":{
       "prefix": "open",   
       "body": "Open[${1:i}]$0",
-      "description": "Series array that contains open prices of each bar of the current chart"
+      "description": "<double> Series array that contains open prices of each bar of the current chart"
    },
    "High":{
       "prefix": "high",   
       "body": "High[${1:i}]$0",
-      "description": "Series array that contains high prices of each bar of the current chart"
+      "description": "<double> Series array that contains high prices of each bar of the current chart"
    },
    "Low":{
       "prefix": "low",   
       "body": "Low[${1:i}]$0",
-      "description": "Series array that contains low prices of each bar of the current chart"
+      "description": "<double> Series array that contains low prices of each bar of the current chart"
    },
    "Close":{
       "prefix": "close",   
       "body": "Open[${1:i}]$0",
-      "description": "Series array that contains close prices of each bar of the current chart"
+      "description": "<double> Series array that contains close prices of each bar of the current chart"
    },
    "Time":{
       "prefix": "time",   
       "body": "Time[${1:i}]$0",
-      "description": "Series array that contains time of each bar of the current chart"
+      "description": "<datetime> Series array that contains time of each bar of the current chart"
    },
    "Volume":{
       "prefix": "volume",   
       "body": "Volume[${1:i}]$0",
-      "description": "Series array that contains volume of each bar of the current chart"
+      "description": "<long> Series array that contains volume of each bar of the current chart"
    },
    
    
 // common funtions
-      "Alert":{
-         "prefix": "alert",
-         "body": "Alert(${1:argument, ...})$0",
-         "description":"Displays a message in a separate window."
-      },
-      "Check Pointer":{
-         "prefix": "check",
-         "body": "CheckPointer(${1:object* anytype})$0",
-         "description":"The function returns the type of the object pointer."
-      },
-      "Comment":{
-         "prefix": "comment",
-         "body": "Comment(${1:argument, ...})$0",
-         "description":"outputs a comment defined by a user in the top left corner of a chart."
-      },
-      "DebugBreak":{
-         "prefix": "debug",
-         "body": "DebugBreak()$0",
-         "description":"sets a debug break point"
-      },
-      "ExpertRemove":{
-         "prefix": "expert",
-         "body": "ExpertRemove()$0",
-         "description":"stops an Expert Advisor and unloads it from a chart."
-      },
-      "GetPointer":{
-         "prefix": "get",
-         "body": "GetPointer(${1:object anytype})$0",
-         "description":"returns the object pointer."
-      },
-      
-      "GetTickCount":{
-         "prefix": "get",
-         "body": "GetTickCount()$0",
-         "description":"returns the number of milliseconds that elapsed since the system start"
-      },
-      "GetMicrosecondCount":{
-         "prefix": "get",
-         "body": "GetMicrosecondCount()$0",
-         "description":"returns the number of microseconds that have elapsed since the start of MQL5-program."
-      },
-      
-      "MessageBox":{
-         "prefix": "messagebox",
-         "body": "MessageBox(${1:string  text},${2:caption=NULL},${3:int flags})$0",
-         "description":"t creates and shows a message box and manages it.."
-      },
-      "PeriodSeconds":{
-         "prefix": "period",
-         "body": "PeriodSeconds(${1:ENUM_TIMEFRAMES=PERIOD_CURRENT})$0",
-         "description":"number of seconds in a period."
-      },
-      "PlaySound":{
-         "prefix": "play",
-         "body": "PlaySound(${1:string  filename})$0",
-         "description":" plays a sound file."
-      },
-      "Print":{
-         "prefix": "print",
-         "body": "Print(${1:argument, ...})$0",
-         "description":"enters a message in the Expert Advisor log. Parameters can be of any type."
-      },
-      "PrintFormat":{
-         "prefix": "print",
-         "body": "PrintFormat(${1:string format_string},{2: ...})$0",
-         "description":"formats and enters sets of symbols and values in the Expert Advisor log in accordance with a preset format."
-      },
-      "ResetLastError":{
-         "prefix": "error",
-         "body": "ResetLastError()$0",
-         "description":"Sets the value of the predefined variable _LastError into zero."
-      },
-      "SendNotification":{
-         "prefix": "send",
-         "body": "SendNotification(${1:string text})$0",
-         "description":"Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the \"Notifications\" tab.."
-      },
-      "SendMail":{
-         "prefix": "send",
-         "body": "SendMail(${1:string subject},${2:string text})$0",
-         "description":"Sends an email at the address specified in the settings window of the Email tab."
-      },
-      "Sleep":{
-         "prefix": "sleep",
-         "body": "Sleep(${1:int milliseconds})$0",
-         "description":"The function suspends execution of the current Expert Advisor or script within a specified interval."
-      },
-      "TranslateKey":{
-         "prefix": "char",
-         "body": "TranslateKey(${1:int key_code})$0",
-         "description":"Returns a Unicode character by a virtual key code considering the current input language and the status of control keys."
-      },
-      "WebRequest":{
-         "prefix": "web",
-         "body": "WebRequest(${1:see docs})$0",
-         "description":"sends an HTTP request to a specified server. The function has two versions:"
-      },
-      "ZeroMemory":{
-         "prefix": "zero",
-         "body": "ZeroMemory(${1:void &variable})$0",
-         "description":"resets a variable passed to it by reference."
-      },
+   "Alert":{
+      "prefix": "alert",
+      "body": "Alert(${1:argument, ...})$0",
+      "description":"<void> Displays a message in a separate window."
+   },
+   "Check Pointer":{
+      "prefix": "check",
+      "body": "CheckPointer(${1:object* anytype})$0",
+      "description":"<ENUM_POINTER_TYPE> The function returns the type of the object pointer."
+   },
+   "Comment":{
+      "prefix": "comment",
+      "body": "Comment(${1:argument, ...})$0",
+      "description":"<void> outputs a comment defined by a user in the top left corner of a chart."
+   },
+   "DebugBreak":{
+      "prefix": "debug",
+      "body": "DebugBreak()$0",
+      "description":"<void> sets a debug break point"
+   },
+   "ExpertRemove":{
+      "prefix": "expert",
+      "body": "ExpertRemove()$0",
+      "description":"<void> stops an Expert Advisor and unloads it from a chart."
+   },
+   "GetPointer":{
+      "prefix": "get",
+      "body": "GetPointer(${1:object anytype})$0",
+      "description":"<void*> returns the object pointer."
+   },
+   
+   "GetTickCount":{
+      "prefix": "get",
+      "body": "GetTickCount()$0",
+      "description":"<uint> returns the number of milliseconds that elapsed since the system start"
+   },
+   "GetMicrosecondCount":{
+      "prefix": "get",
+      "body": "GetMicrosecondCount()$0",
+      "description":"<ulong> returns the number of microseconds that have elapsed since the start of MQL5-program."
+   },
+   
+   "MessageBox":{
+      "prefix": "messagebox",
+      "body": "MessageBox(${1:string  text},${2:caption=NULL},${3:int flags})$0",
+      "description":"<> creates and shows a message box and manages it.."
+   },
+   "PeriodSeconds":{
+      "prefix": "period",
+      "body": "PeriodSeconds(${1:ENUM_TIMEFRAMES=PERIOD_CURRENT})$0",
+      "description":"<> number of seconds in a period."
+   },
+   "PlaySound":{
+      "prefix": "play",
+      "body": "PlaySound(${1:string  filename})$0",
+      "description":"<> plays a sound file."
+   },
+   "Print":{
+      "prefix": "print",
+      "body": "Print(${1:argument, ...})$0",
+      "description":"<> enters a message in the Expert Advisor log. Parameters can be of any type."
+   },
+   "PrintFormat":{
+      "prefix": "print",
+      "body": "PrintFormat(${1:string format_string},{2: ...})$0",
+      "description":"<> formats and enters sets of symbols and values in the Expert Advisor log in accordance with a preset format."
+   },
+   "ResetLastError":{
+      "prefix": "error",
+      "body": "ResetLastError()$0",
+      "description":"<> Sets the value of the predefined variable _LastError into zero."
+   },
+   "SendNotification":{
+      "prefix": "send",
+      "body": "SendNotification(${1:string text})$0",
+      "description":"<> Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the \"Notifications\" tab.."
+   },
+   "SendMail":{
+      "prefix": "send",
+      "body": "SendMail(${1:string subject},${2:string text})$0",
+      "description":"<> Sends an email at the address specified in the settings window of the Email tab."
+   },
+   "Sleep":{
+      "prefix": "sleep",
+      "body": "Sleep(${1:int milliseconds})$0",
+      "description":"<> The function suspends execution of the current Expert Advisor or script within a specified interval."
+   },
+   "TranslateKey":{
+      "prefix": "char",
+      "body": "TranslateKey(${1:int key_code})$0",
+      "description":"<> Returns a Unicode character by a virtual key code considering the current input language and the status of control keys."
+   },
+   "WebRequest":{
+      "prefix": "web",
+      "body": "WebRequest(${1:see docs})$0",
+      "description":"<> sends an HTTP request to a specified server. The function has two versions:"
+   },
+   "ZeroMemory":{
+      "prefix": "zero",
+      "body": "ZeroMemory(${1:void &variable})$0",
+      "description":"<> resets a variable passed to it by reference."
+   },
 // array funtions
-      "ArraySize":{
-         "prefix": "array",
-         "body": "ArraySize(${1:const void&  array[]})",
-         "description":"The function returns the number of elements of a selected array.."
-      },
-      "ArrayIsSeries":{
-         "prefix": "array",
-         "body": "ArrayIsSeries(${1:const void&  array[]})$0",
-         "description":"The function checks whether an array is a timeseries."
-      },
-      "ArrayGetAsSeries":{
-         "prefix": "array",
-         "body": "ArrayGetAsSeries(${1:const void&  array[]})$0",
-         "description":"It checks direction of an array index.."
-      },
-      "ArraySetAsSeries":{
-         "prefix": "array",
-         "body": "ArrayIsSeries(${1:const void&  array[]})$0",
-         "description":"The function sets the AS_SERIES flag to a selected object of a dynamic array, and elements will be indexed like in timeseries."
-      },
-      "ArrayResize":{
-         "prefix": "array",
-         "body": "ArrayResize(${1:void&  array[]},${2:int new_size},${3:reserved_size=0})$0",
-         "description":"The function sets a new size for the first dimension"
-      },
-      "ArrayInitialize":{
-         "prefix": "array",
-         "body": "ArrayInitialize(${1:T array[]},${2:T value})$0",
-         "description":"initializes a numeric array by a preset value."
-      },
+   "ArraySize":{
+      "prefix": "array",
+      "body": "ArraySize(${1:const void&  array[]})",
+      "description":"<> The function returns the number of elements of a selected array.."
+   },
+   "ArrayIsSeries":{
+      "prefix": "array",
+      "body": "ArrayIsSeries(${1:const void&  array[]})$0",
+      "description":"<> The function checks whether an array is a timeseries."
+   },
+   "ArrayGetAsSeries":{
+      "prefix": "array",
+      "body": "ArrayGetAsSeries(${1:const void&  array[]})$0",
+      "description":"<> It checks direction of an array index.."
+   },
+   "ArraySetAsSeries":{
+      "prefix": "array",
+      "body": "ArrayIsSeries(${1:const void&  array[]})$0",
+      "description":"<> The function sets the AS_SERIES flag to a selected object of a dynamic array, and elements will be indexed like in timeseries."
+   },
+   "ArrayResize":{
+      "prefix": "array",
+      "body": "ArrayResize(${1:void&  array[]},${2:int new_size},${3:reserved_size=0})$0",
+      "description":"<> The function sets a new size for the first dimension"
+   },
+   "ArrayInitialize":{
+      "prefix": "array",
+      "body": "ArrayInitialize(${1:T array[]},${2:T value})$0",
+      "description":"<> initializes a numeric array by a preset value."
+   },
 // conversion functions
-      "CharToString":{
-         "prefix": "char",
-         "body": "CharToString(${1:uchar char_code})$0",
-         "description":"Converting a symbol code into a one-character string."
-      },
-      "CharArrayToString":{
-         "prefix": "char",
-         "body": "CharArrayToString(${1:uchar array[]},${2:int start},${3:int count=1},${4:uint code_page=CP_ACP})$0",
-         "description":"It copies and converts part of array of uchar type into a returned string.."
-      },
-      "ColorToString":{
-         "prefix": "color",
-         "body": "ColorToString(${1:color color},${2:bool show_color_name})$0",
-         "description":"It converts color value into string of R,G,B form."
-      },
-      "DoubleToString":{
-         "prefix": "double",
-         "body": "DoubleToString(${1:double value},${2:int digits=8})$0",
-         "description":"Converting numeric value into text string."
-      },
-      "EnumToString":{
-         "prefix": "enum",
-         "body": "EnumToString(${1:any_enum value})$0",
-         "description":"Converting an enumeration value of any type to a text form."
-      },
-      "TimeToString":{
-         "prefix": "time",
-         "body": "TimeToString(${1:datetime value},${2:int mode=TIME_DATE|TIME_MINUTES})$0",
-         "description":"Converting a value containing time in seconds elapsed since 01.01.1970 into a string of yyyy.mm.dd hh:mi format."
-      },
+   "CharToString":{
+      "prefix": "char",
+      "body": "CharToString(${1:uchar char_code})$0",
+      "description":"<> Converting a symbol code into a one-character string."
+   },
+   "CharArrayToString":{
+      "prefix": "char",
+      "body": "CharArrayToString(${1:uchar array[]},${2:int start},${3:int count=1},${4:uint code_page=CP_ACP})$0",
+      "description":"<> It copies and converts part of array of uchar type into a returned string.."
+   },
+   "ColorToString":{
+      "prefix": "color",
+      "body": "ColorToString(${1:color color},${2:bool show_color_name})$0",
+      "description":"<> It converts color value into string of R,G,B form."
+   },
+   "DoubleToString":{
+      "prefix": "double",
+      "body": "DoubleToString(${1:double value},${2:int digits=8})$0",
+      "description":"<> Converting numeric value into text string."
+   },
+   "EnumToString":{
+      "prefix": "enum",
+      "body": "EnumToString(${1:any_enum value})$0",
+      "description":"<> Converting an enumeration value of any type to a text form."
+   },
+   "TimeToString":{
+      "prefix": "time",
+      "body": "TimeToString(${1:datetime value},${2:int mode=TIME_DATE|TIME_MINUTES})$0",
+      "description":"<> Converting a value containing time in seconds elapsed since 01.01.1970 into a string of yyyy.mm.dd hh:mi format."
+   },
 
-      "NormalizeDouble":{
-         "prefix": "double",
-         "body": "NormalizeDouble(${1:double value},${2:int digits})$0",
-         "description":"Rounding floating point number to a specified accuracy."
-      },
-      "StringToCharArray":{
-         "prefix": "string",
-         "body": "StringToCharArray(${1:string text_string},${2:uchar& array[]},${3:int start=0},${4:int count=-1},${5:uint codepage=CP_ACP})$0",
-         "description":"Symbol-wise copies a string converted from Unicode to ANSI, to a selected place of array of uchar type. It returns the number of copied elements."
-      },
-      "StringToTime":{
-         "prefix": "string",
-         "body": "StringToTime(${1:string value})$0",
-         "description":"converts a string containing time or date in yyyy.mm.dd [hh:mi] format into datetime type."
-      },
-      "StringFormat":{
-         "prefix": "string",
-         "body": "StringFormat(${1:string format},${2:params...})$0",
-         "description":"The function formats obtained parameters and returns a string."
-      },
+   "NormalizeDouble":{
+      "prefix": "double",
+      "body": "NormalizeDouble(${1:double value},${2:int digits})$0",
+      "description":"<> Rounding floating point number to a specified accuracy."
+   },
+   "StringToCharArray":{
+      "prefix": "string",
+      "body": "StringToCharArray(${1:string text_string},${2:uchar& array[]},${3:int start=0},${4:int count=-1},${5:uint codepage=CP_ACP})$0",
+      "description":"<> Symbol-wise copies a string converted from Unicode to ANSI, to a selected place of array of uchar type. It returns the number of copied elements."
+   },
+   "StringToTime":{
+      "prefix": "string",
+      "body": "StringToTime(${1:string value})$0",
+      "description":"<> converts a string containing time or date in yyyy.mm.dd [hh:mi] format into datetime type."
+   },
+   "StringFormat":{
+      "prefix": "string",
+      "body": "StringFormat(${1:string format},${2:params...})$0",
+      "description":"<> The function formats obtained parameters and returns a string."
+   },
 // math functions
    "MathAbs":{
       "prefix": "math",
       "body": "fabs(${1:double value})$0",
-      "description":"The function returns the absolute value (modulus) of the specified numeric value."
+      "description":"<double> The function returns the absolute value (modulus) of the specified numeric value."
    },
    "MathCeil":{
       "prefix": "math",
       "body": "floor(${1:double value})$0",
-      "description":"The function returns integer numeric value closest from above."
+      "description":"<double> The function returns integer numeric value closest from above."
    },
    "MathFloor":{
       "prefix": "math",
       "body": "fabs(${1:double value})$0",
-      "description":"The function returns integer numeric value closest from below."
+      "description":"<double> The function returns integer numeric value closest from below."
    },
    "MathLog":{
       "prefix": "math",
       "body": "log(${1:double value})$0",
-      "description":"The function returns a natural logarithm."
+      "description":"<double> The function returns a natural logarithm."
    },
-
-
+   
    "MathLog10":{
       "prefix": "math",
       "body": "log10(${1:double value})$0",
-      "description":"Returns the logarithm of a number by base 10."
+      "description":"<double> Returns the logarithm of a number by base 10."
    },
    "MathMax":{
       "prefix": "math",
       "body": "fmax(${1:double value1},${2:double value2})$0",
-      "description":" returns the maximal value of two values."
+      "description":" <double> returns the maximal value of two values."
    },
    "MathMin":{
       "prefix": "math",
       "body": "fmin(${1:double value1},${2:double value2})$0",
-      "description":"returns the minimal value of two values."
+      "description":"<double> returns the minimal value of two values."
    },
 
    "MathPow":{
       "prefix": "math",
       "body": "pow(${1:double value})$0",
-      "description":"The function raises a base to a specified power."
+      "description":"<double> The function raises a base to a specified power."
    },
    "MathRand":{
       "prefix": "math",
       "body": "rand()$0",
-      "description":"Returns a pseudorandom integer within the range of 0 to 32767."
+      "description":"<double> Returns a pseudorandom integer within the range of 0 to 32767."
    },
 
    "MathRound":{
       "prefix": "math",
-      "body": "round()$0",
-      "description":"returns a value rounded off to the nearest integer of the specified numeric value."
+      "body": "round(${1:double value})$0",
+      "description":"<double> returns a value rounded off to the nearest integer of the specified numeric value."
    },
    "MathSqrt":{
       "prefix": "math",
-      "body": "sqrt()$0",
-      "description":"Returns the square root of a number."
+      "body": "sqrt(${1:double value})$0",
+      "description":"<double> Returns the square root of a number."
    },
+// Date Time
+   "TimeCurrentStruct":{
+      "prefix": "time",
+      "body": "TimeCurrent(${1:MqlDateTime struct})$0",
+      "description":"<> MqlDateTime structure type variable has been passed as a parameter, it is filled accordingly"
+   },  
+   "TimeCurrent":{
+      "prefix": "time",
+      "body": "TimeCurrent()$0",
+      "description":"<> Returns the last known server time"
+   },  
+
+   "TimeTradeServer":{
+      "prefix": "time",
+      "body": "TimeTradeServer()$0",
+      "description":"<> Returns the calculated current time of the trade server"
+   }, 
+   "TimeLocal":{
+      "prefix": "time",
+      "body": "TimeLocal()$0",
+      "description":"<> Returns the local time of a computer"
+   }, 
+   "TimeLocal Struct":{
+      "prefix": "time",
+      "body": "TimeLocal(${1:MqlDateTime &struct})$0",
+      "description":"<> Returns the local time of a computer; fills struct"
+   }, 
+   "TimeGMT":{
+      "prefix": "time",
+      "body": "TimeGMT()$0",
+      "description":"<> Returns the GMT, which is calculated taking into account the DST switch by the local time on the computer where the client terminal is running."
+   }, 
+   "TimeGMT Struct":{
+      "prefix": "time",
+      "body": "TimeGMT(${1:MqlDateTime &struct})$0",
+      "description":"<> Returns the GMT, which is calculated taking into account the DST switch by the local time on the computer where the client terminal is running."
+   }, 
+
+   "TimeDaylightSavings":{
+      "prefix": "time",
+      "body": "TimeDaylightSavings()$0",
+      "description":"<> Returns correction for daylight saving time in seconds, if the switch to summer time has been made."
+   }, 
+
+   "TimeGMTOffset":{
+      "prefix": "time",
+      "body": "TimeGMTOffset()$0",
+      "description":"<> Returns the current difference between GMT time and the local computer time in seconds"
+   }, 
+
+   "TimeToStruct":{
+      "prefix": "time",
+      "body": "TimeToStruct(${1:datetime dt},${2:MqlDateTime &struct})$0",
+      "description":"<> Converts a value of datetime type (number of seconds since 01.01.1970) into a structure variable MqlDateTime."
+   }, 
+
+   "StructToTime":{
+      "prefix": "time",
+      "body": "StructToTime(${1:MqlDateTime &struct})$0",
+      "description":"<> Converts a structure variable MqlDateTime into a value of datetime type and returns the resulting value."
+   }, 
+// string functions
+   "StringAdd":{
+      "prefix": "string",
+      "body": "StringAdd(${1:string& str_var},${2:string add_substring})$0",
+      "description":"<> adds a substring to the end of a string."
+   },
+   "StringBufferLen":{
+      "prefix": "string",
+      "body": "StringBufferLen(${1:string string_var})$0",
+      "description":"<> returns the size of buffer allocated for the string."
+   },
+   "StringCompare":{
+      "prefix": "string",
+      "body": "StringCompare(${1:string str1},${2:string str2},${bool case_sensitive=true})$0",
+      "description":"<> compares two strings and returns the comparison result in form of an integer.Case sensitivity mode selection. If it is true, then A>a. If it is false, then A=a."
+   },
+   "StringFill":{
+      "prefix": "string",
+      "body": "StringFill(${1:string& str_var},${2:ushort character})$0",
+      "description":"<> It fills out a selected string by specified symbols"
+   },
+   "StringFind":{
+      "prefix": "string",
+      "body": "StringFind(${1:string value},${2:string match_substring},${3:int start_pos=0})$0",
+      "description":"<> Search for a substring in a string."
+   },
+   "StringGetCharacter":{
+      "prefix": "string",
+      "body": "StringGetCharacter(${1:string str_var},${2:int pos})$0",
+      "description":"<> returns value of a symbol, located in the specified position of a string."
+   },
+   "StringLen":{
+      "prefix": "string",
+      "body": "StringLen(${1:string str_var})$0",
+      "description":"<> Returns the number of symbols in a string"
+   },
+   "StringReplace":{
+      "prefix": "string",
+      "body": "StringReplace(${1:string& str},${2:string find},${3:string replace})$0",
+      "description":"<> replaces all the found substrings of a string by a set sequence of symbols."
+   },
+
+   "StringSplit":{
+      "prefix": "string",
+      "body": "StringSplit(${1:string str},${2:ushort separator},${3:string &result[]})$0",
+      "description":"<> Gets substrings by a specified separator from the specified string, returns the number of substrings obtained."
+   },
+
+   "StringSubstr":{
+      "prefix": "string",
+      "body": "StringSubstr(${1:string str},${2:int start_pos},${3:int length=-1)$0",
+      "description":"<> Extracts a substring from a text string starting from the specified position."
+   },
+
+   "StringToLower":{
+      "prefix": "string",
+      "body": "StringToLower(${1:string& str})$0",
+      "description":"<> Transforms all symbols of a selected string into lowercase."
+   },
+   "StringToUpper":{
+      "prefix": "string",
+      "body": "StringToUpper(${1:string& str})$0",
+      "description":"<> Transforms all symbols of a selected string into capitals."
+   },
+
+   "StringTrimRight":{
+      "prefix": "string",
+      "body": "StringTrimRight(${1:string& str})$0",
+      "description":"<> The function cuts line feed characters, spaces and tabs in the right part of the string after the last meaningful symbol. The string is modified at place."
+   },
+
+   "StringTrimLeft":{
+      "prefix": "string",
+      "body": "StringTrimLeft(${1:string& str})$0",
+      "description":"<> The function cuts line feed characters, spaces and tabs in the left part of the string till the first meaningful symbol. The string is modified at place."
+   },
+
+// account information
+   "AccountInfoDouble":{
+      "prefix": "account",
+      "body": "AccountInfoDouble(${1:ENUM_ACOUNT_INFO_INTEGER  property_id})$0",
+      "description":"<double> Returns the value of the corresponding account property."
+   },
+   "AccountInfoInteger":{
+      "prefix": "account",
+      "body": "AccountInfoInteger(${1:int  property_id})$0",
+      "description":"<> Returns the value of the corresponding account property."
+   },
+   "AccountInfoString":{
+      "prefix": "account",
+      "body": "AccountInfoString(${1:int  property_id})$0",
+      "description":"<> Returns the value of the corresponding account property."
+   },
+// ENUM_ACCOUNT_INFO_INTEGER
+   "ACCOUNT_LOGIN":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_LOGIN$0",
+      "description":"<long> Account number"
+   },
+   "ACCOUNT_TRADE_MODE":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_TRADE_MODE$0",
+      "description":"<ENUM_ACCOUNT_TRADE_MODE> Account trade mode"
+   },
+   "ACCOUNT_LEVERAGE":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_LEVERAGE$0",
+      "description":"<long> Account leverage"
+   },
+   "ACCOUNT_LIMIT_ORDERS":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_LIMIT_ORDERS$0",
+      "description":"<int> Maximum allowed number of active pending orders"
+   },
+   "ACCOUNT_MARGIN_SO_MODE":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_MARGIN_SO_MODE$0",
+      "description":"<ENUM_ACCOUNT_STOPOUT_MODE> Mode for setting the minimal allowed margin"
+   },
+   "ACCOUNT_TRADE_ALLOWED":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_TRADE_ALLOWED$0",
+      "description":"<bool> Allowed trade for the current account"
+   },
+   "ACCOUNT_TRADE_EXPERT":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_TRADE_EXPERT$0",
+      "description":"<bool> Allowed trade for an Expert Advisor"
+   },
+   "ACCOUNT_MARGIN_MODE":{
+      "prefix": "enum_account",
+      "body": "ACCOUNT_MARGIN_MODE$0",
+      "description":"<ENUM_ACCOUNT_MARGIN_MODE> Margin calculation mode"
+   },
+   
+// Checkup
+   "GetLastError":{
+      "prefix": "error",
+      "body": "GetLastError()$0",
+      "description":"<int> Returns the contents of the system variable _LastError"
+   },
+   "IsStopped":{
+      "prefix": "isstopped",
+      "body": "IsStopped()$0",
+      "description":"<bool> Checks the forced shutdown of an mql5 program"
+   },
+
+   "UninitializeReason":{
+      "prefix": "uninit",
+      "body": "UninitializeReason()$0",
+      "description":"<int> Returns the code of a reason for deinitialization."
+   },
+   "TerminalInfoInteger":{
+      "prefix": "terminal",
+      "body": "TerminalInfoInteger(${1:int property_id})$0",
+      "description":"<long> Returns the value of a corresponding property of the mql5 program environment"
+   },
+   "TerminalInfoDouble":{
+      "prefix": "terminal",
+      "body": "TerminalInfoDouble(${1:int property_id})$0",
+      "description":"<double> Returns the value of a corresponding property of the mql5 program environment"
+   },
+   "TerminalInfoString":{
+      "prefix": "terminal",
+      "body": "TerminalInfoString(${1:int property_id})$0",
+      "description":"<string> Returns the value of a corresponding property of the mql5 program environment"
+   },
+
+   "MQLInfoInteger":{
+      "prefix": "mqlinfo",
+      "body": "MQLInfoInteger(${1:int property_id})$0",
+      "description":"<int> Returns the value of a corresponding property of a running mql5 program."
+   },
+
+   "MQLInfoString":{
+      "prefix": "mqlinfo",
+      "body": "MQLInfoString(${1:int property_id})$0",
+      "description":"<string> Returns the value of a corresponding property of a running mql5 program."
+   },
+
+// market info
+
+// timeseries and indicaor access
+
+// Custom symbols
+
+// chart operations
+
+// trade functions
+
+// global variables of the terminal
+
+// file functions
+
+// custom indicators
+
+// object functions
+
+// indicators
+
+// ---------------------------------------
 
 // common code blocks
       //for
