@@ -1,2 +1,3 @@
 node_modules
 .vsix
+snippets/snippets_with_comments.json
