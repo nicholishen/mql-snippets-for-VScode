@@ -2,7 +2,7 @@
     "name": "mql-snippets",
     "displayName": "MQL Snippets",
     "description": "Snippets for the built-in MQL functions, constants, predefined variables, and common patterns",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "nicholishen",
     "engines": {
         "vscode": "^0.10.1"

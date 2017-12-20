@@ -1,20 +1,14 @@
 # mql-snippets README
 
-Snippets for MQL built-ins
-
-Right now only a few functions are implemented as a test. 
-
-Example common array functions can be accessed by typing in the keyword "array"
-
+Snippets for MQL built-in functions, ENUMS, predefined variables, and keywords.
 
 ## Prefix keywords to invoke snippets
 ```
-datetime       - functions related to datetime
-tostring   - functions that convert to strings
-string     - string functions
-math
-mqlstruct
-
+mqlfunctionname - typed in lower case will bring up suggestions
+_symbolinfodouble - words starting with underscore will bring up suggestions for MQL ENUM_...
+mqltemplate - brings up templates
+for - snippets for common for-loops
+functionheader - create a new function and description at the same time
 ```
 
 
@@ -26,15 +20,15 @@ mqlstruct
 
 ## Known Issues
 
-Not all snippets installed yet. This is a test.
+Only programmed about 80% of the library so far so you may find some snippets are missing.
 
 ## Release Notes
 
 BETA
 
-### BETA 0.02
+### 0.0.8
 
-Initial release of MQL snippets
+Added about 50 new snippets
 
 
 ### For more information
