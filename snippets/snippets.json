@@ -79,8 +79,98 @@
       "prefix":"period",
       "body":"PERIOD_MN1",
    },
+// order commands
+   "OP_BUY": {
+      "prefix":"opbuy",
+      "body":"OP_BUY",
+   },
+   "OP_BUYLIMIT": {
+      "prefix":"opbuylimit",
+      "body":"OP_BUYLIMIT",
+   },
+   "OP_BUYSTOP": {
+      "prefix":"opbuystop",
+      "body":"OP_BUYSTOP",
+   },
+   "OP_SELL": {
+      "prefix":"opsell",
+      "body":"OP_SELL",
+   },
+   "OP_SELLLIMIT": {
+      "prefix":"opselllimit",
+      "body":"OP_SELLLIMIT",
+   },
+   "OP_SELLSTOP": {
+      "prefix":"opsellstop",
+      "body":"OP_SELLSTOP",
+   },
 
-
+// enum ma method
+   "ENUM_MA_METHOD": {
+      "prefix":"enummamethod",
+      "body":"ENUM_TIMEFRAMES",
+      "description": "Timeframe enum"
+   },
+   "MODE_SMA": {
+      "prefix":"ma_method",
+      "body":"MODE_SMA",
+      "description":"Simple averaging"
+   },
+   "MODE_EMA": {
+      "prefix":"ma_method",
+      "body":"MODE_EMA",
+      "description":"Exponential averaging"
+   },
+   "MODE_SMMA": {
+      "prefix":"ma_method",
+      "body":"MODE_SMMA",
+      "description":"Smoothed averaging"
+   },
+   "MODE_LWMA": {
+      "prefix":"ma_method",
+      "body":"MODE_LWMA",
+      "description":"Linear-weighted averaging"
+   },
+ 
+// enum applied price
+   "ENUM_APPLIED_PRICE": {
+      "prefix":"enumappliedprice",
+      "body":"ENUM_APPLIED_PRICE",
+      "description": "Applied price enum"
+   },
+   "PRICE_CLOSE": {
+      "prefix":"applied_price",
+      "body":"PRICE_CLOSE",
+    
+   },
+   "PRICE_OPEN": {
+      "prefix":"applied_price",
+      "body":"PRICE_OPEN",
+     
+   },
+   "PRICE_HIGH": {
+      "prefix":"applied_price",
+      "body":"PRICE_HIGH",
+      
+   },
+   "PRICE_LOW": {
+      "prefix":"applied_price",
+      "body":"PRICE_LOW",
+   },
+   "PRICE_MEDIAN": {
+      "prefix":"applied_price",
+      "body":"PRICE_MEDIAN",
+     
+   },
+   "PRICE_TYPICAL": {
+      "prefix":"applied_price",
+      "body":"PRICE_TYPICAL",
+      
+   },
+   "PRICE_WEIGHTED": {
+      "prefix":"applied_price",
+      "body":"PRICE_WEIGHTED",
+   },
 
 // MQL structs
    "MqlDateTime": {
@@ -176,32 +266,32 @@
    },
    // MQL4 built-in arrays
    "Open[]": {
-      "prefix": "_open",
+      "prefix": "Open",
       "body": "Open[${1:i}]$0",
       "description": "<double> Series array that contains open prices of each bar of the current chart"
    },
    "High[]": {
-      "prefix": "_high",
+      "prefix": "High",
       "body": "High[${1:i}]$0",
       "description": "<double> Series array that contains high prices of each bar of the current chart"
    },
    "Low[]": {
-      "prefix": "_low",
+      "prefix": "Low",
       "body": "Low[${1:i}]$0",
       "description": "<double> Series array that contains low prices of each bar of the current chart"
    },
    "Close[]": {
-      "prefix": "_close",
+      "prefix": "Close",
       "body": "Close[${1:i}]$0",
       "description": "<double> Series array that contains close prices of each bar of the current chart"
    },
    "Time[]": {
-      "prefix": "_time",
+      "prefix": "Time",
       "body": "Time[${1:i}]$0",
       "description": "<datetime> Series array that contains time of each bar of the current chart"
    },
    "Volume[]": {
-      "prefix": "_volume",
+      "prefix": "Volume",
       "body": "Volume[${1:i}]$0",
       "description": "<long> Series array that contains volume of each bar of the current chart"
    },
@@ -1048,6 +1138,44 @@
       "description": "<int> Returns order operation type of the currently selected order. OP_BUY=buy-order, OP_SELL=sell-order, OP_BUYLIMIT=buy-limit, OP_BUYSTOP=buy-stop, OP_SELLLIMIT=sell-limit, OP_SELLSTOP=sell-stop."
    },
 
+// iIndicators
+   "iATR":{
+      "prefix":"indicator",
+      "body":"iATR(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:int shift})$0",
+      "description":"<double> Calculates the Average True Range indicator and returns its value"
+   },
+   "iADX":{
+      "prefix":"indicator",
+      "body":"iADX(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:int applied_price}, ${5:int mode}, ${6:int shift})$0",
+      "description":"<double> Calculates the Average Directional Movement Index indicator and returns its value."
+   },
+   "iBands":{
+      "prefix":"indicator",
+      "body":"iBands(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:double deviation}, ${5:int bands_shift}, ${6:int applied_price}, ${7:int mode}, ${8:int shift})$0",
+      "description":"<double> Calculates the Bollinger Bands® indicator and returns its value."
+   },
+   "iCustom":{
+      "prefix":"indicator",
+      "body":"iCustom(${1:string symbol}, ${2:int timeframe}, ${3:string name}, ${4: ... }, ${5:int buffer_index}, ${6:int shift})$0",
+      "description":"<double> Calculates the specified custom indicator and returns its value. The custom indicator must be compiled (*.EX4 file) and be in the terminal_directory\\MQL4\\Indicators\\ directory."
+   },
+
+   "iMA":{
+      "prefix":"indicator",
+      "body":"iMA(${1:string symbol}, ${2:int timeframe}, ${3:int ma_period}, ${4:int ma_shift}, ${5:int ma_method}, ${6:int applied_price}, ${7:int shift})$0",
+      "description":"<double> Calculates the Moving Average indicator and returns its value. eg. iMA(NULL,0,13,8,MODE_SMMA,PRICE_MEDIAN,i);"
+   },
+
+   "iRSI":{
+      "prefix":"indicator",
+      "body":"iRSI(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:int applied_price}, ${5:int shift})$0",
+      "description":"<double> Calculates the RSI indicator and returns its value."
+   },
+   "iStochastic":{
+      "prefix":"indicator",
+      "body":"iStochastic(${1:string symbol}, ${2:int timeframe}, ${3:int Kperiod}, ${4:int Dperiod}, ${5:int slowing}, ${5:int method}, ${6:int price_field}, ${7:int mode}, ${8:int shift})$0",
+      "description":"<double> Calculates the Moving Average indicator and returns its value. eg. iMA(NULL,0,13,8,MODE_SMMA,PRICE_MEDIAN,i);"
+   },
 
 
 // Common MQL4 code snippets
@@ -1122,20 +1250,81 @@
          "$4",
          " ",
          " ",
-         "void OnTick()",
+         "void OnStart()",
          "{",
          "   $5",
          "}",
          "$0"
       ]
    },
+   "Expert_Template": {
+      "prefix": "mqltemplate_expert",
+      "body": [
+         "//+------------------------------------------------------------------+",
+         "//| ${1:file_name.mq4}.mq4",
+         "//| Copyright 2017, ${2:Author Name}",
+         "//| ${3:Link}",
+         "//+------------------------------------------------------------------+",
+         "#property copyright \"Copyright 2017, ${2:Author Name}\"",
+         "#property link      \"${3:Link}\"",
+         "#property version   \"1.00\"",
+         "#property strict",
+         "$4",
+         " ",
+         " ",
+         "//+------------------------------------------------------------------+",
+         "//| Expert initialization function                                   |",
+         "//+------------------------------------------------------------------+",
+         "int OnInit()",
+         "{",
+         "   EventSetTimer(60);",
+         "   ",
+         "   return(INIT_SUCCEEDED);",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| Expert deinitialization function                                 |",
+         "//+------------------------------------------------------------------+",
+         ",void OnDeinit(const int reason)",
+         "{",
+         " EventKillTimer();",
+         "    ",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| Expert tick function                                             |",
+         "//+------------------------------------------------------------------+",
+         "void OnTick()",
+         "{",
+         "   ",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| Timer function                                                   |",
+         "//+------------------------------------------------------------------+",
+         "void OnTimer()",
+         "{",
+         "  ",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| ChartEvent function                                              |",
+         "//+------------------------------------------------------------------+",
+         "void OnChartEvent(const int id,",
+         "                const long &lparam,",
+         "                const double &dparam,",
+         "                const string &sparam)",
+         "{",
+         " ",
+         "}",
+         "//+------------------------------------------------------------------+",
+      ],
+      "description":"expert advisor template"
+   },
+
    "Function Header": {
       "prefix": "functionheader",
       "body": [
          "//+------------------------------------------------------------------+",
-         "//| ${1:type} ${2:Funtion()} : ${3:description}",
+         "//| ${1:type} ${2:FuntionName} : ${3:description}",
          "//+------------------------------------------------------------------+",
-         "${1:type} ${2:Function()}",
+         "${1:type} ${2:FunctionName}($4)",
          "{",
          "   $0",
          "}"
