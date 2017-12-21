@@ -37,6 +37,14 @@
       "body": "#include <${1:file_name.mqh}>$0",
       "description": "preprocessor include directive"
    },
+   "dynamic_cast":{
+      "prefix":"dynamic_cast",
+      "body":"dynamic_cast<${1:type-id}>(${2:expression})$0",
+      "description":["Dynamic typecasting is performed using dynamic_cast operator that can be applied only to pointers to classes.", 
+         "Type validation is performed at runtime. This means that the compiler does not check the data type applied for typecasting when dynamic_cast operator is used.", 
+         "If a pointer is converted to a data type which is not the actual type of an object, the result is NULL."
+      ]
+   }
 // enum_timeframes
    "ENUM_TIMEFRAMES": {
       "prefix":"enumtimeframes",
@@ -1176,6 +1184,67 @@
       "body":"iStochastic(${1:string symbol}, ${2:int timeframe}, ${3:int Kperiod}, ${4:int Dperiod}, ${5:int slowing}, ${5:int method}, ${6:int price_field}, ${7:int mode}, ${8:int shift})$0",
       "description":"<double> Calculates the Moving Average indicator and returns its value. eg. iMA(NULL,0,13,8,MODE_SMMA,PRICE_MEDIAN,i);"
    },
+// chart event enums
+   "ENUM_CHART_EVENT":{
+      "prefix":"enumchartevent",
+      "body":"ENUM_CHART_EVENT",
+      "description":"There are 9 types of events that can be processed using the predefined function OnChartEvent(). "
+   },
+   "CHARTEVENT_KEYDOWN":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_KEYDOWN",
+      "description":"Keystrokes"
+   },
+   "CHARTEVENT_MOUSE_MOVE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_MOUSE_MOVE",
+      "description":"Mouse move, mouse clicks (if CHART_EVENT_MOUSE_MOVE=true is set for the chart)"
+   },
+   "CHARTEVENT_OBJECT_CREATE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_CREATE",
+      "description":"Graphical object created (if CHART_EVENT_OBJECT_CREATE=true is set for the chart)"
+   },
+   "CHARTEVENT_OBJECT_DELETE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_DELETE",
+      "description":"Graphical object deleted (if CHART_EVENT_OBJECT_DELETE=true is set for the chart)"
+   },
+   "CHARTEVENT_OBJECT_CHANGE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_CHANGE",
+      "description":"Graphical object property changed via the properties dialog"
+   },
+   "CHARTEVENT_CLICK":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CLICK",
+      "description":"Clicking on a graphical object"
+   },
+   "CHARTEVENT_OBJECT_DRAG":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_DRAG",
+      "description":"Drag and drop of a graphical object"
+   },
+   "CHARTEVENT_OBJECT_ENDEDIT":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_ENDEDIT",
+      "description":"End of text editing in the graphical object Edit"
+   },
+   "CHARTEVENT_CHART_CHANGE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CHART_CHANGE",
+      "description":"Change of the chart size or modification of chart properties through the Properties dialog"
+   },
+   "CHARTEVENT_CUSTOM":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CUSTOM",
+      "description":"Initial number of an event from a range of custom events"
+   },
+   "CHARTEVENT_CUSTOM_LAST":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CUSTOM_LAST",
+      "description":"The final number of an event from a range of custom events"
+   },
 
 
 // Common MQL4 code snippets
@@ -1270,7 +1339,6 @@
          "#property version   \"1.00\"",
          "#property strict",
          "$4",
-         " ",
          " ",
          "//+------------------------------------------------------------------+",
          "//| Expert initialization function                                   |",
