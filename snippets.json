@@ -1,0 +1,1604 @@
+{
+// default types
+   "datetime": {
+      "prefix": "datetime",
+      "body": "datetime"
+   },
+   "color": {
+      "prefix": "color",
+      "body": "color"
+   },
+   "ulong": {
+      "prefix": "ulong",
+      "body": "ulong"
+   },
+   "ushort": {
+      "prefix": "ushort",
+      "body": "ushort"
+   },
+   "uchar": {
+      "prefix": "uchar",
+      "body": "uchar"
+   },
+   "uint": {
+      "prefix": "uint",
+      "body": "uint"
+   },
+   "string": {
+      "prefix": "string",
+      "body": "string"
+   },
+   "NULL": {
+      "prefix": "null",
+      "body": "NULL"
+   },
+   "include": {
+      "prefix": "include",
+      "body": "#include <${1:file_name.mqh}>$0",
+      "description": "preprocessor include directive"
+   },
+
+
+   "dynamic_cast":{
+      "prefix":"dynamic_cast",
+      "body":"dynamic_cast<${1:type-id}>(${2:expression})$0",
+      "description":["Dynamic typecasting is performed using dynamic_cast operator that can be applied only to pointers to classes.", 
+         "Type validation is performed at runtime. This means that the compiler does not check the data type applied for typecasting when dynamic_cast operator is used.", 
+         "If a pointer is converted to a data type which is not the actual type of an object, the result is NULL."
+      ]
+   }
+// enum_timeframes
+   "ENUM_TIMEFRAMES": {
+      "prefix":"enumtimeframes",
+      "body":"ENUM_TIMEFRAMES",
+      "description": "Timeframe enum"
+   },
+   "PERIOD_M1": {
+      "prefix":"period",
+      "body":"PERIOD_M1",
+   },
+   "PERIOD_M5": {
+      "prefix":"period",
+      "body":"PERIOD_M5",
+   },
+   "PERIOD_M15": {
+      "prefix":"period",
+      "body":"PERIOD_M15",
+   },
+   "PERIOD_M30": {
+      "prefix":"period",
+      "body":"PERIOD_M30",
+   },
+   "PERIOD_H1": {
+      "prefix":"period",
+      "body":"PERIOD_H1",
+   },
+   "PERIOD_H4": {
+      "prefix":"period",
+      "body":"PERIOD_H4",
+   },
+   "PERIOD_D1": {
+      "prefix":"period",
+      "body":"PERIOD_D1",
+   },
+   "PERIOD_W1": {
+      "prefix":"period",
+      "body":"PERIOD_W1",
+   },
+   "PERIOD_MN1": {
+      "prefix":"period",
+      "body":"PERIOD_MN1",
+   },
+// order commands
+   "OP_BUY": {
+      "prefix":"opbuy",
+      "body":"OP_BUY",
+   },
+   "OP_BUYLIMIT": {
+      "prefix":"opbuylimit",
+      "body":"OP_BUYLIMIT",
+   },
+   "OP_BUYSTOP": {
+      "prefix":"opbuystop",
+      "body":"OP_BUYSTOP",
+   },
+   "OP_SELL": {
+      "prefix":"opsell",
+      "body":"OP_SELL",
+   },
+   "OP_SELLLIMIT": {
+      "prefix":"opselllimit",
+      "body":"OP_SELLLIMIT",
+   },
+   "OP_SELLSTOP": {
+      "prefix":"opsellstop",
+      "body":"OP_SELLSTOP",
+   },
+
+// enum ma method
+   "ENUM_MA_METHOD": {
+      "prefix":"enummamethod",
+      "body":"ENUM_TIMEFRAMES",
+      "description": "Timeframe enum"
+   },
+   "MODE_SMA": {
+      "prefix":"ma_method",
+      "body":"MODE_SMA",
+      "description":"Simple averaging"
+   },
+   "MODE_EMA": {
+      "prefix":"ma_method",
+      "body":"MODE_EMA",
+      "description":"Exponential averaging"
+   },
+   "MODE_SMMA": {
+      "prefix":"ma_method",
+      "body":"MODE_SMMA",
+      "description":"Smoothed averaging"
+   },
+   "MODE_LWMA": {
+      "prefix":"ma_method",
+      "body":"MODE_LWMA",
+      "description":"Linear-weighted averaging"
+   },
+ 
+// enum applied price
+   "ENUM_APPLIED_PRICE": {
+      "prefix":"enumappliedprice",
+      "body":"ENUM_APPLIED_PRICE",
+      "description": "Applied price enum"
+   },
+   "PRICE_CLOSE": {
+      "prefix":"applied_price",
+      "body":"PRICE_CLOSE",
+    
+   },
+   "PRICE_OPEN": {
+      "prefix":"applied_price",
+      "body":"PRICE_OPEN",
+     
+   },
+   "PRICE_HIGH": {
+      "prefix":"applied_price",
+      "body":"PRICE_HIGH",
+      
+   },
+   "PRICE_LOW": {
+      "prefix":"applied_price",
+      "body":"PRICE_LOW",
+   },
+   "PRICE_MEDIAN": {
+      "prefix":"applied_price",
+      "body":"PRICE_MEDIAN",
+     
+   },
+   "PRICE_TYPICAL": {
+      "prefix":"applied_price",
+      "body":"PRICE_TYPICAL",
+      
+   },
+   "PRICE_WEIGHTED": {
+      "prefix":"applied_price",
+      "body":"PRICE_WEIGHTED",
+   },
+
+// MQL structs
+   "MqlDateTime": {
+      "prefix": "mqldatetime",
+      "body": "MqlDateTime $0",
+      "description": "<struct> structure contains eight fields of the int type"
+   },
+   "MqlParam": {
+      "prefix": "mqlparam",
+      "body": "MqlParam $0",
+      "description": "<struct> The MqlParam structure has been specially designed to provide input parameters when creating the handle of a technical indicator using the IndicatorCreate() function."
+   },
+   "MqlRates": {
+      "prefix": "mqlrates",
+      "body": "MqlRates $0",
+      "description": "<struct> structure stores information about the prices, volumes and spread."
+   },
+   "MqlBookInfo": {
+      "prefix": "mqlbookinfo",
+      "body": "MqlBookInfo $0",
+      "description": "<struct> provides information about the market depth data"
+   },
+   "MqlTradeRequest": {
+      "prefix": "mqltraderequest",
+      "body": "MqlTradeRequest $0",
+      "description": "<struct> Interaction between the client terminal and a trade server for executing the order placing operation is performed by using trade requests. "
+   },
+   "MqlTradeCheckResult": {
+      "prefix": "mqltradecheckresult",
+      "body": "MqlTradeCheckResult $0",
+      "description": "<struct> Before sending a request for a trade operation to a trade server, it is recommended to check it. The check is performed using the OrderCheck() function, to which the checked request and a variable of the MqlTradeCheckResult structure type are passed. The check result will be written to this variable."
+   },
+   "MqlTradeResult": {
+      "prefix": "mqltraderesult",
+      "body": "MqlTradeResult $0",
+      "description": "<struct> As result of a trade request, a trade server returns data about the trade request processing result as a special predefined structure of MqlTradeResult type."
+   },
+   "MqlTick": {
+      "prefix": "mqltick",
+      "body": "MqlTick $0",
+      "description": "<struct> This is a structure for storing the latest prices of the symbol. It is designed for fast retrieval of the most requested information about current prices."
+   },
+// Predefined variables
+   "_Symbol":{
+      "prefix":"symbol",
+      "body":"_Symbol",
+      "description":"<string> Returns the string value of the current symbol."
+   },
+   "_Digits": {
+      "prefix": "digits",
+      "body": "_Digits$0",
+      "description": "<int> Number of decimal places"
+   },
+   "_Point": {
+      "prefix": "point",
+      "body": "_Point$0",
+      "description": "<double> Size of the current symbol point in the quote currency"
+   },
+   "_LastError": {
+      "prefix": "lasterror",
+      "body": "_LastError$0",
+      "description": "<int> last error code"
+   },
+   "_Period": {
+      "prefix": "period",
+      "body": "_Period$0",
+      "description": "<ENUM_TIMEFRAMES> value of the timeframe of the current chart."
+   },
+   "_RandomSeed": {
+      "prefix": "randomseed",
+      "body": "_RandomSeed$0",
+      "description": "<int> Variable for storing the current state when generating pseudo-random integers"
+   },
+   "_StopFlag": {
+      "prefix": "stopflag",
+      "body": "_StopFlag$0",
+      "description": "<bool> contains the flag of the mql5-program stop"
+   },
+   "_UninitReason": {
+      "prefix": "uninitreason",
+      "body": "_UninitReason$0",
+      "description": "<int> contains the code of the program uninitialization reason."
+   },
+   "Bid": {
+      "prefix": "bid",
+      "body": "Bid$0",
+      "description": "<double> bid"
+   },
+   "Ask": {
+      "prefix": "ask",
+      "body": "Ask$0",
+      "description": "<double> ask"
+   },
+   // MQL4 built-in arrays
+   "Open[]": {
+      "prefix": "Open",
+      "body": "Open[${1:i}]$0",
+      "description": "<double> Series array that contains open prices of each bar of the current chart"
+   },
+   "High[]": {
+      "prefix": "High",
+      "body": "High[${1:i}]$0",
+      "description": "<double> Series array that contains high prices of each bar of the current chart"
+   },
+   "Low[]": {
+      "prefix": "Low",
+      "body": "Low[${1:i}]$0",
+      "description": "<double> Series array that contains low prices of each bar of the current chart"
+   },
+   "Close[]": {
+      "prefix": "Close",
+      "body": "Close[${1:i}]$0",
+      "description": "<double> Series array that contains close prices of each bar of the current chart"
+   },
+   "Time[]": {
+      "prefix": "Time",
+      "body": "Time[${1:i}]$0",
+      "description": "<datetime> Series array that contains time of each bar of the current chart"
+   },
+   "Volume[]": {
+      "prefix": "Volume",
+      "body": "Volume[${1:i}]$0",
+      "description": "<long> Series array that contains volume of each bar of the current chart"
+   },
+// Common functions
+   "Alert": {
+      "prefix": "alert",
+      "body": "Alert(${1:argument, ...})$0",
+      "description": "<void> Displays a message in a separate window."
+   },
+   "Check Pointer": {
+      "prefix": "checkpointer",
+      "body": "CheckPointer(${1:object* anytype})$0",
+      "description": "<ENUM_POINTER_TYPE> The function returns the type of the object pointer."
+   },
+   "Comment": {
+      "prefix": "comment",
+      "body": "Comment(${1:argument, ...})$0",
+      "description": "<void> outputs a comment defined by a user in the top left corner of a chart."
+   },
+   "DebugBreak": {
+      "prefix": "debugbreak",
+      "body": "DebugBreak()$0",
+      "description": "<void> sets a debug break point"
+   },
+   "ExpertRemove": {
+      "prefix": "expertremove",
+      "body": "ExpertRemove()$0",
+      "description": "<void> stops an Expert Advisor and unloads it from a chart."
+   },
+   "GetPointer": {
+      "prefix": "getpointer",
+      "body": "GetPointer(${1:object anytype})$0",
+      "description": "<void*> returns the object pointer."
+   },
+   "GetTickCount": {
+      "prefix": "gettickcount",
+      "body": "GetTickCount()$0",
+      "description": "<uint> returns the number of milliseconds that elapsed since the system start"
+   },
+   "GetMicrosecondCount": {
+      "prefix": "getmicrosecondcount",
+      "body": "GetMicrosecondCount()$0",
+      "description": "<ulong> returns the number of microseconds that have elapsed since the start of MQL5-program."
+   },
+   "MessageBox": {
+      "prefix": "messagebox",
+      "body": "MessageBox(${1:string  text}, ${2:caption=NULL}, ${3:int flags})$0",
+      "description": "<int> creates and shows a message box and manages it.."
+   },
+   "PeriodSeconds": {
+      "prefix": "periodseconds",
+      "body": "PeriodSeconds(${1:ENUM_TIMEFRAMES=PERIOD_CURRENT})$0",
+      "description": "<int> number of seconds in a period."
+   },
+   "PlaySound": {
+      "prefix": "playsound",
+      "body": "PlaySound(${1:string  filename})$0",
+      "description": "<bool> plays a sound file."
+   },
+   "Print": {
+      "prefix": "print",
+      "body": "Print(${1:argument, ...})$0",
+      "description": "<void> enters a message in the Expert Advisor log. Parameters can be of any type."
+   },
+   "PrintFormat": {
+      "prefix": "printformat",
+      "body": "PrintFormat(${1:string format_string}, ${2: ...})$0",
+      "description": "<void> formats and enters sets of symbols and values in the Expert Advisor log in accordance with a preset format."
+   },
+   "ResetLastError": {
+      "prefix": "resetlasterror",
+      "body": "ResetLastError()$0",
+      "description": "<void> Sets the value of the predefined variable _LastError into zero."
+   },
+   "SendNotification": {
+      "prefix": "sendnotification",
+      "body": "SendNotification(${1:string text})$0",
+      "description": "<bool> Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the \"Notifications\" tab.."
+   },
+   "SendMail": {
+      "prefix": "sendmail",
+      "body": "SendMail(${1:string subject}, ${2:string text})$0",
+      "description": "<bool> Sends an email at the address specified in the settings window of the Email tab."
+   },
+   "Sleep": {
+      "prefix": "sleep",
+      "body": "Sleep(${1:int milliseconds})$0",
+      "description": "<void> The function suspends execution of the current Expert Advisor or script within a specified interval."
+   },
+   "TranslateKey": {
+      "prefix": "translatekey",
+      "body": "TranslateKey(${1:int key_code})$0",
+      "description": "<short> Returns a Unicode character by a virtual key code considering the current input language and the status of control keys."
+   },
+   "WebRequest": {
+      "prefix": "webrequest",
+      "body": "WebRequest(${1:see docs})$0",
+      "description": "<int> sends an HTTP request to a specified server. The function has two versions:"
+   },
+   "ZeroMemory": {
+      "prefix": "zeromem",
+      "body": "ZeroMemory(${1:void &variable})$0",
+      "description": "<void> resets a variable passed to it by reference."
+   },
+// Array functions
+   "ArraySize": {
+      "prefix": "arraysize",
+      "body": "ArraySize(${1:const void& array[]})",
+      "description": "<int> The function returns the number of elements of a selected array.."
+   },
+   "ArrayGetAsSeries": {
+      "prefix": "arraygetasseries",
+      "body": "ArrayGetAsSeries(${1:const void& array[]})$0",
+      "description": "<bool> It checks direction of an array index.."
+   },
+   "ArraySetAsSeries": {
+      "prefix": "arraysetasseries",
+      "body": "ArraySetAsSeries(${1:const void& array[]}, ${bool flag})$0",
+      "description": "<bool> The function sets the AS_SERIES flag to a selected object of a dynamic array, and elements will be indexed like in timeseries."
+   },
+   "ArrayResize": {
+      "prefix": "arrayresize",
+      "body": "ArrayResize(${1:void& array[]}, ${2:int new_size},${3:reserved_size=0})$0",
+      "description": "<int> The function sets a new size for the first dimension"
+   },
+   "ArrayInitialize": {
+      "prefix": "arrayinit",
+      "body": "ArrayInitialize(${1:T array[]}, ${2:T value})$0",
+      "description": "<int> initializes a numeric array by a preset value."
+   },
+// Conversion functions
+   "CharToString": {
+      "prefix": "chartostring",
+      "body": "CharToString(${1:uchar char_code})$0",
+      "description": "<tostring> Converting a symbol code into a one-character string."
+   },
+   "CharArrayToString": {
+      "prefix": "chararraytostring",
+      "body": "CharArrayToString(${1:uchar array[]}, ${2:int start}, ${3:int count=1}, ${4:uint code_page=CP_ACP})$0",
+      "description": "<string> It copies and converts part of array of uchar type into a returned string.."
+   },
+   "ColorToString": {
+      "prefix": "colortostring",
+      "body": "ColorToString(${1:color color}, ${2:bool show_color_name})$0",
+      "description": "<string> It converts color value into string of R,G,B form."
+   },
+   "DoubleToString": {
+      "prefix": "doubletostring",
+      "body": "DoubleToString(${1:double value}, ${2:int digits=8})$0",
+      "description": "<string> Converting numeric value into text string."
+   },
+   "EnumToString": {
+      "prefix": "enumtostring",
+      "body": "EnumToString(${1:any_enum value})$0",
+      "description": "<string> Converting an enumeration value of any type to a text form."
+   },
+   "TimeToString": {
+      "prefix": "timetostring",
+      "body": "TimeToString(${1:datetime value}, ${2:int mode=TIME_DATE|TIME_MINUTES})$0",
+      "description": "<string> Converting a value containing time in seconds elapsed since 01.01.1970 into a string of yyyy.mm.dd hh:mi format."
+   },
+   "NormalizeDouble": {
+      "prefix": "normalizedouble",
+      "body": "NormalizeDouble(${1:double value}, ${2:int digits})$0",
+      "description": "<double> Rounding floating point number to a specified accuracy."
+   },
+   "StringToCharArray": {
+      "prefix": "stringtochararray",
+      "body": "StringToCharArray(${1:string text_string}, ${2:uchar& array[]}, ${3:int start=0}, ${4:int count=-1}, ${5:uint codepage=CP_ACP})$0",
+      "description": "<int> Symbol-wise copies a string converted from Unicode to ANSI, to a selected place of array of uchar type. It returns the number of copied elements."
+   },
+   "StringToTime": {
+      "prefix": "stringtitime",
+      "body": "StringToTime(${1:string value})$0",
+      "description": "<datetime> converts a string containing time or date in yyyy.mm.dd [hh:mi] format into datetime type."
+   },
+   "StringFormat": {
+      "prefix": "stringformat",
+      "body": "StringFormat(${1:string format}, ${2:params...})$0",
+      "description": "<string> The function formats obtained parameters and returns a string."
+   },
+// Math functions
+   "MathAbs": {
+      "prefix": "math",
+      "body": "fabs(${1:double value})$0",
+      "description": "<double> The function returns the absolute value (modulus) of the specified numeric value."
+   },
+   "MathPow": {
+      "prefix": "math",
+      "body": "pow(${1:double base}, ${2:double exponent})$0",
+      "description": "<double> The function returns the absolute value (modulus) of the specified numeric value."
+   },
+   "MathArcsin": {
+      "prefix": "math",
+      "body": "asin(${1:double value})$0",
+      "description": "<double> returns the arc sine of x within the range of -π/2 to π/2 radians."
+   },
+   "MathArccos": {
+      "prefix": "math",
+      "body": "acos(${1:double value})$0",
+      "description": "<double> returns the arccosine of x within the range 0 to π in radians."
+   },
+   "MathCeil": {
+      "prefix": "math",
+      "body": "ceil(${1:double value})$0",
+      "description": "<double> returns integer numeric value closest from above."
+   },
+   "MathFloor": {
+      "prefix": "math",
+      "body": "floor(${1:double value})$0",
+      "description": "<double> returns integer numeric value closest from below."
+   },
+   "MathLog": {
+      "prefix": "math",
+      "body": "log(${1:double value})$0",
+      "description": "<double> returns a natural logarithm."
+   },
+   "MathLog10": {
+      "prefix": "math",
+      "body": "log10(${1:double value})$0",
+      "description": "<double> Returns the logarithm of a number by base 10."
+   },
+   "MathMax": {
+      "prefix": "math",
+      "body": "fmax(${1:double value1}, ${2:double value2})$0",
+      "description": " <double> returns the maximal value of two values."
+   },
+   "MathMin": {
+      "prefix": "math",
+      "body": "fmin(${1:double value1}, ${2:double value2})$0",
+      "description": "<double> returns the minimal value of two values."
+   },
+   "MathRand": {
+      "prefix": "math",
+      "body": "rand()$0",
+      "description": "<int> Returns a pseudorandom integer within the range of 0 to 32767."
+   },
+   "MathSrand": {
+      "prefix": "math",
+      "body": "srand(${int seed})$0",
+      "description": "<void> Sets the starting point for generating a series of pseudorandom integers."
+   },
+   "MathRound": {
+      "prefix": "math",
+      "body": "round(${1:double value})$0",
+      "description": "<double> returns a value rounded off to the nearest integer of the specified numeric value."
+   },
+   "MathIsValidNumber": {
+      "prefix": "math",
+      "body": "MathIsValidNumber(${1:double value})$0",
+      "description": "<bool> checks the correctness of a real number"
+   },
+   "MathSqrt": {
+      "prefix": "math",
+      "body": "sqrt(${1:double value})$0",
+      "description": "<double> Returns the square root of a number."
+   },
+// Time functions
+   "TimeCurrentStruct": {
+      "prefix": "timecurrent",
+      "body": "TimeCurrent(${1:MqlDateTime struct})$0",
+      "description": "<datetime> MqlDateTime structure type variable has been passed as a parameter, it is filled accordingly"
+   },
+   "TimeCurrent": {
+      "prefix": "timecurrent",
+      "body": "TimeCurrent()$0",
+      "description": "<datetime> Returns the last known server time"
+   },
+   "TimeTradeServer": {
+      "prefix": "timetradeserver",
+      "body": "TimeTradeServer()$0",
+      "description": "<datetime> Returns the calculated current time of the trade server"
+   },
+   "TimeLocal": {
+      "prefix": "timelocal",
+      "body": "TimeLocal()$0",
+      "description": "<datetime> Returns the local time of a computer"
+   },
+   "TimeLocal Struct": {
+      "prefix": "timelocal",
+      "body": "TimeLocal(${1:MqlDateTime &struct})$0",
+      "description": "<datetime> Returns the local time of a computer; fills struct"
+   },
+   "TimeGMT": {
+      "prefix": "timegmt",
+      "body": "TimeGMT()$0",
+      "description": "<datetime> Returns the GMT, which is calculated taking into account the DST switch by the local time on the computer where the client terminal is running."
+   },
+   "TimeGMT Struct": {
+      "prefix": "timegmt",
+      "body": "TimeGMT(${1:MqlDateTime &struct})$0",
+      "description": "<datetime> Returns the GMT, which is calculated taking into account the DST switch by the local time on the computer where the client terminal is running."
+   },
+   "TimeDaylightSavings": {
+      "prefix": "timedaylight",
+      "body": "TimeDaylightSavings()$0",
+      "description": "<datetime> Returns correction for daylight saving time in seconds, if the switch to summer time has been made."
+   },
+   "TimeGMTOffset": {
+      "prefix": "timegmtoffest",
+      "body": "TimeGMTOffset()$0",
+      "description": "<datetime> Returns the current difference between GMT time and the local computer time in seconds"
+   },
+   "TimeToStruct": {
+      "prefix": "timetostruct",
+      "body": "TimeToStruct(${1:datetime dt}, ${2:MqlDateTime &struct})$0",
+      "description": "<bool> Converts a value of datetime type (number of seconds since 01.01.1970) into a structure variable MqlDateTime."
+   },
+   "StructToTime": {
+      "prefix": "structotime",
+      "body": "StructToTime(${1:MqlDateTime &struct})$0",
+      "description": "<datetime> Converts a structure variable MqlDateTime into a value of datetime type and returns the resulting value."
+   },
+   // String Functions
+   "StringAdd": {
+      "prefix": "stringadd",
+      "body": "StringAdd(${1:string& str_var}, ${2:string add_substring})$0",
+      "description": "<bool> adds a substring to the end of a string."
+   },
+   "StringBufferLen": {
+      "prefix": "stringbufferlen",
+      "body": "StringBufferLen(${1:string string_var})$0",
+      "description": "<int> returns the size of buffer allocated for the string."
+   },
+   "StringCompare": {
+      "prefix": "stringcompare",
+      "body": "StringCompare(${1:string str1}, ${2:string str2},${bool case_sensitive=true})$0",
+      "description": "<int> compares two strings and returns the comparison result in form of an integer.Case sensitivity mode selection. If it is true, then A>a. If it is false, then A=a."
+   },
+   "StringFill": {
+      "prefix": "stringfill",
+      "body": "StringFill(${1:string& str_var}, ${2:ushort character})$0",
+      "description": "<bool> It fills out a selected string by specified symbols"
+   },
+   "StringFind": {
+      "prefix": "stringfind",
+      "body": "StringFind(${1:string value}, ${2:string match_substring},${3:int start_pos=0})$0",
+      "description": "<int> Search for a substring in a string."
+   },
+   "StringGetCharacter": {
+      "prefix": "stringgetchar",
+      "body": "StringGetCharacter(${1:string str_var}, ${2:int pos})$0",
+      "description": "<ushort> returns value of a symbol, located in the specified position of a string."
+   },
+   "StringLen": {
+      "prefix": "stringlen",
+      "body": "StringLen(${1:string str_var})$0",
+      "description": "<int> Returns the number of symbols in a string"
+   },
+   "StringReplace": {
+      "prefix": "stringreplace",
+      "body": "StringReplace(${1:string& str}, ${2:string find}, ${3:string replace})$0",
+      "description": [
+         "<int> replaces all the found substrings of a string by a set sequence of symbols.",
+         "The function returns the number of replacements in case of success, otherwise -1. To get an error code call the GetLastError() function."
+      ]
+   },
+   "StringSplit": {
+      "prefix": "stringsplit",
+      "body": "StringSplit(${1:string str}, ${2:ushort separator}, ${3:string &result[]})$0",
+      "description": "<int> Gets substrings by a specified separator from the specified string, returns the number of substrings obtained."
+   },
+   "StringSubstr": {
+      "prefix": "stringsub",
+      "body": "StringSubstr(${1:string str}, ${2:int start_pos}, ${3:int length=-1)$0",
+      "description": "<string> Extracts a substring from a text string starting from the specified position."
+   },
+   "StringToLower": {
+      "prefix": "stringtolower",
+      "body": "StringToLower(${1:string& str})$0",
+      "description": "<bool> Transforms all symbols of a selected string into lowercase."
+   },
+   "StringToUpper": {
+      "prefix": "stringtoupper",
+      "body": "StringToUpper(${1:string& str})$0",
+      "description": "<bool> Transforms all symbols of a selected string into capitals."
+   },
+   "StringTrimRight": {
+      "prefix": "stringtrimright",
+      "body": "StringTrimRight(${1:string& str})$0",
+      "description": "<int> The function cuts line feed characters, spaces and tabs in the right part of the string after the last meaningful symbol. The string is modified at place."
+   },
+   "StringTrimLeft": {
+      "prefix": "stringtrimleft",
+      "body": "StringTrimLeft(${1:string& str})$0",
+      "description": "<int> The function cuts line feed characters, spaces and tabs in the left part of the string till the first meaningful symbol. The string is modified at place."
+   },
+// Account info
+   "AccountInfoDouble": {
+      "prefix": "accountinfodouble",
+      "body": "AccountInfoDouble(${1:ENUM_ACOUNT_INFO_DOUBLE property_id})$0",
+      "description": "<double> Returns the value of the corresponding account property."
+   },
+   "AccountInfoInteger": {
+      "prefix": "accountinfoint",
+      "body": "AccountInfoInteger(${1:ENUM_ACOUNT_INFO_INTEGER  property_id})$0",
+      "description": "<long> Returns the value of the corresponding account property."
+   },
+   "AccountInfoString": {
+      "prefix": "accountinfostring",
+      "body": "AccountInfoString(${1:ENUM_ACOUNT_INFO_STRING  property_id})$0",
+      "description": "<string> Returns the value of the corresponding account property."
+   },
+// Account int enums
+   "ACCOUNT_LOGIN": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_LOGIN$0",
+      "description": "<long> Account number"
+   },
+   "ACCOUNT_TRADE_MODE": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_TRADE_MODE$0",
+      "description": "<ENUM_ACCOUNT_TRADE_MODE> Account trade mode"
+   },
+   "ACCOUNT_LEVERAGE": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_LEVERAGE$0",
+      "description": "<long> Account leverage"
+   },
+   "ACCOUNT_LIMIT_ORDERS": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_LIMIT_ORDERS$0",
+      "description": "<int> Maximum allowed number of active pending orders"
+   },
+   "ACCOUNT_MARGIN_SO_MODE": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_MARGIN_SO_MODE$0",
+      "description": "<ENUM_ACCOUNT_STOPOUT_MODE> Mode for setting the minimal allowed margin"
+   },
+   "ACCOUNT_TRADE_ALLOWED": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_TRADE_ALLOWED$0",
+      "description": "<bool> Allowed trade for the current account"
+   },
+   "ACCOUNT_TRADE_EXPERT": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_TRADE_EXPERT$0",
+      "description": "<bool> Allowed trade for an Expert Advisor"
+   },
+   "ACCOUNT_MARGIN_MODE": {
+      "prefix": "_account_int",
+      "body": "ACCOUNT_MARGIN_MODE$0",
+      "description": "<ENUM_ACCOUNT_MARGIN_MODE> Margin calculation mode"
+   },
+// Terminal Info
+   "GetLastError": {
+      "prefix": "getlasterror",
+      "body": "GetLastError()$0",
+      "description": "<int> Returns the contents of the system variable _LastError"
+   },
+   "IsStopped": {
+      "prefix": "isstopped",
+      "body": "IsStopped()$0",
+      "description": "<bool> Checks the forced shutdown of an mql5 program"
+   },
+   "UninitializeReason": {
+      "prefix": "uninitreason",
+      "body": "UninitializeReason()$0",
+      "description": "<int> Returns the code of a reason for deinitialization."
+   },
+   "TerminalInfoInteger": {
+      "prefix": "terminalinfoint",
+      "body": "TerminalInfoInteger(${1:int property_id})$0",
+      "description": "<long> Returns the value of a corresponding property of the mql5 program environment"
+   },
+   "TerminalInfoDouble": {
+      "prefix": "terminalinfodouble",
+      "body": "TerminalInfoDouble(${1:int property_id})$0",
+      "description": "<double> Returns the value of a corresponding property of the mql5 program environment"
+   },
+   "TerminalInfoString": {
+      "prefix": "terminalinfostring",
+      "body": "TerminalInfoString(${1:int property_id})$0",
+      "description": "<string> Returns the value of a corresponding property of the mql5 program environment"
+   },
+   "MQLInfoInteger": {
+      "prefix": "mqlinfoint",
+      "body": "MQLInfoInteger(${1:int property_id})$0",
+      "description": "<int> Returns the value of a corresponding property of a running mql5 program."
+   },
+   "MQLInfoString": {
+      "prefix": "mqlinfostring",
+      "body": "MQLInfoString(${1:int property_id})$0",
+      "description": "<string> Returns the value of a corresponding property of a running mql5 program."
+   },
+//Symbol info
+   "SymbolsTotal": {
+      "prefix": "symbolstotal",
+      "body": "SymbolsTotal(${1:bool selected})$0",
+      "description": "<int> Returns the number of available (selected in Market Watch or all) symbols."
+   },
+   "SymbolName": {
+      "prefix": "symbolname",
+      "body": "SymbolName(${1:int pos}, ${2:bool selected})$0",
+      "description": "<string> returns the name of the symbol from the marketwatch window."
+   },
+   "SymbolSelect": {
+      "prefix": "symbolselect",
+      "body": "SymbolSelect(${1:string name}, ${2:bool select})$0",
+      "description": "<bool> Selects a symbol in the Market Watch window or removes a symbol from the window."
+   },
+   "SymbolIsSynchronized": {
+      "prefix": "symbolissync",
+      "body": "SymbolIsSynchronized(${1:string name})$0",
+      "description": "<bool> The function checks whether data of a selected symbol in the terminal are synchronized with data on the trade server."
+   },
+   "SymbolInfoTick": {
+      "prefix": "symbolinfotick",
+      "body": "SymbolInfoTick(${1:string name}, ${2:MqlTick& tick})$0",
+      "description": "<bool> returns current prices of a specified symbol in a variable of the MqlTick type."
+   },
+   "MarketBookAdd": {
+      "prefix": "marketbookadd",
+      "body": "MarketBookAdd(${1:string name})$0",
+      "description": "<bool> Provides opening of Depth of Market for a selected symbol, and subscribes for receiving notifications of the DOM changes."
+   },
+   "MarketBookRelease": {
+      "prefix": "marketbookrelease",
+      "body": "MarketBookRelease(${1:string name})$0",
+      "description": "<bool> Provides closing of Depth of Market for a selected symbol, and cancels the subscription for receiving notifications of the DOM changes."
+   },
+   "MarketBookGet": {
+      "prefix": "marketbookget",
+      "body": "MarketBookGet(${1:string name}, ${2:MqlBookInfo&  book[]})$0",
+      "description": "<bool> Returns a structure array MqlBookInfo containing records of the Depth of Market of a specified symbol."
+   },
+   "SymbolInfoInteger": {
+      "prefix": "symbolinfoint",
+      "body": "SymbolInfoInteger(${1:string name}, ${2:ENUM_SYMBOL_INFO_STRING prop_id})$0",
+      "description": "<long> Returns the corresponding property of a specified symbol."
+   },
+   "SymbolInfoString": {
+      "prefix": "symbolinfostr",
+      "body": "SymbolInfoString(${1:string name}, ${2:ENUM_SYMBOL_INFO_INTEGER prop_id})$0",
+      "description": "<string> Returns the corresponding property of a specified symbol."
+   },
+   "SymbolInfoDouble": {
+      "prefix": "symbolinfodouble",
+      "body": "SymbolInfoDouble(${1:string name}, ${2:ENUM_SYMBOL_INFO_DOUBLE prop_id})$0",
+      "description": "<double> Returns the corresponding property of a specified symbol."
+   },
+// symbol info double enums
+   "SYMBOL_BID":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_BID",
+      "description":"<double> Bid"
+   },
+   "SYMBOL_ASK":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_ASK",
+      "description":"<double> Ask"
+   },
+   "SYMBOL_POINT":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_POINT",
+      "description":"<double> Symbol point value."
+   },
+   "SYMBOL_TRADE_TICK_VALUE":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_TRADE_TICK_VALUE",
+      "description":"<double> Value of one tick"
+   },
+   "SYMBOL_TRADE_TICK_SIZE":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_TRADE_TICK_SIZE",
+      "description":"<double> Minimal price change"
+   },
+   "SYMBOL_VOLUME_MIN":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_VOLUME_MIN",
+      "description":"<double> Minimal volume for a deal"
+   },
+   "SYMBOL_VOLUME_MAX":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_VOLUME_MAX",
+      "description":"<double> Maximum volume for a deal."
+   },
+   "SYMBOL_VOLUME_STEP":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_VOLUME_STEP",
+      "description":"<double> Minimal volume change step for deal execution"
+   },
+   "SYMBOL_MARGIN_INITIAL":{
+      "prefix": "_symbolinfodouble",
+      "body": "SYMBOL_MARGIN_INITIAL",
+      "description":"<double> Initial margin means the amount in the margin currency required for opening an order with the volume of one lot. It is used for checking a client's assets when he or she enters the market."
+   },
+
+// symbol info string enums
+   "SYMBOL_CURRENCY_BASE":{
+      "prefix": "_symbolinfostring",
+      "body": "SYMBOL_CURRENCY_BASE",
+      "description":"<string> Basic currency of a symbol."
+   },
+
+   "SYMBOL_CURRENCY_PROFIT":{
+      "prefix": "_symbolinfostring",
+      "body": "SYMBOL_CURRENCY_PROFIT",
+      "description":"<string> Profit/counter currency of a symbol."
+   },
+   "SYMBOL_CURRENCY_MARGIN":{
+      "prefix": "_symbolinfostring",
+      "body": "SYMBOL_CURRENCY_MARGIN",
+      "description":"<string> Margin Currency"
+   },
+   "SYMBOL_DESCRIPTION":{
+      "prefix": "_symbolinfostring",
+      "body": "SYMBOL_DESCRIPTION",
+      "description":"<string> Symbol Description."
+   },
+
+// symbol info int enums
+   "SYMBOL_SELECT":{
+      "prefix": "_symbolinfoint",
+      "body": "SYMBOL_SELECT",
+      "description":"<bool> Symbol is selected in Market Watch. Some symbols can be hidden in Market Watch, but still they are considered as selected."
+   },
+   "SYMBOL_DIGITS":{
+      "prefix": "_symbolinfoint",
+      "body": "SYMBOL_DIGITS",
+      "description":"<int> Number of decimal places in the symbol quote."
+   },
+   "SYMBOL_TIME":{
+      "prefix": "_symbolinfoint",
+      "body": "SYMBOL_TIME",
+      "description":"<datetime> Time of the last quote."
+   },
+
+
+// series info integer
+   "SeriesInfoInteger": {
+      "prefix": "seriesinfoint",
+      "body": "SeriesInfoInteger(${1:string name}, ${2:ENUM_TIMEFRAMES timeframe}, ${3:ENUM_SERIES_INFO_INTEGER prop_id})$0",
+      "description": "<long> Returns information about the state of historical data."
+   },
+// series info enums
+   "SERIES_BARS_COUNT":{
+      "prefix": "_seriesinfoint",
+      "body": "SERIES_BARS_COUNT",
+      "description":"<long> Bars count for the symbol-period for the current moment"
+   },
+   "SERIES_FIRSTDATE":{
+      "prefix": "_seriesinfoint",
+      "body": "SERIES_FIRSTDATE",
+      "description":"<datetime> The very first date for the symbol-period for the current moment"
+   },
+   "SERIES_LASTBAR_DATE":{
+      "prefix": "_seriesinfoint",
+      "body": "SERIES_LASTBAR_DATE",
+      "description":"<datetime> Open time of the last bar of the symbol-period"
+   },
+   "SERIES_SERVER_FIRSTDATE":{
+      "prefix": "_seriesinfoint",
+      "body": "SERIES_SERVER_FIRSTDATE",
+      "description":"<datetime> The very first date in the history of the symbol on the server regardless of the timeframe"
+   },
+// bars
+   "Bars_From_To": {
+      "prefix": "bars",
+      "body": "Bars(${1:string name}, ${2:ENUM_TIMEFRAMES timeframe}, ${3:datetime start_time}, ${4:datetime stop_time})$0",
+      "description": "<int> Returns the number of bars count in the history for a specified symbol and period."
+   },
+   "Bars": {
+      "prefix": "bars",
+      "body": "Bars(${1:string name}, ${2:ENUM_TIMEFRAMES timeframe})$0",
+      "description": "<int> Returns the number of bars count in the history for a specified symbol and period."
+   },
+   "BarsCalculated": {
+      "prefix": "barscalculated",
+      "body": "BarsCalculated(${1:int ind_handle})$0",
+      "description": "<int> Returns the number of calculated data for the specified indicator"
+   },
+   "IndicatorRelease": {
+      "prefix": "indicatorrelease",
+      "body": "IndicatorRelease(${1:int ind_handle})$0",
+      "description": "<bool> removes an indicator handle and releases the calculation block of the indicator, if it's not used by anyone else."
+   },
+   "CopyTicks": {
+      "prefix": "copyticks",
+      "body": "CopyTicks(${1:string symbol}, ${2:MqlTick& tickarray[]}, ${3:uint flags=COPY_TICKS_ALL}, ${4:ulong from=0}, ${5:uint count=0})$0",
+      "description": "<int> receives ticks in the MqlTick format into ticks_array."
+   },
+   "CopyBuffer": {
+      "prefix": "copybuffer",
+      "body": "CopyBuffer(${1:int handle}, ${2:int buffer_number}, ${3:int start_pos|datetime start_time}, ${4:int count|datetime stop_time}, ${5:double buffer[]})$0",
+      "description": "<int> Gets data of a specified buffer of a certain indicator in the necessary quantity."
+   },
+   "CopyRates": {
+      "prefix": "copyrates",
+      "body": "CopyRates(${1:string symbol}, ${2:ENUM_TIMEFRAMES timeframe}, ${3:int start_pos|datetime start_time}, ${4:int count|datetime stop_time}, ${5:MqlRates rates_array[]})$0",
+      "description": "<int> Gets history data of MqlRates structure of a specified symbol-period in specified quantity into the rates_array array. The elements ordering of the copied data is from present to the past, i.e., starting position of 0 means the current bar."
+   },
+   "EventSetMillisecondTimer": {
+      "prefix": "eventsetmillisecond",
+      "body": "EventSetMillisecondTimer(${1:int milliseconds})$0",
+      "description": "<bool> indicates to the client terminal that timer events should be generated at intervals less than one second for this Expert Advisor or indicator."
+   },
+   "EventSetTimer": {
+      "prefix": "eventsetimer",
+      "body": "EventSetTimer(${1:int seconds})$0",
+      "description": "<bool> indicates to the client terminal, that for this indicator or Expert Advisor, events from the timer must be generated with the specified periodicity."
+   },
+   "EventKillTimer": {
+      "prefix": "eventkilltimer",
+      "body": "EventKillTimer()$0",
+      "description": "<bool> Specifies the client terminal that is necessary to stop the generation of events from Timer."
+   },
+   "EventChartCustom": {
+      "prefix": "eventchartcustom",
+      "body": "EventChartCustom()$0",
+      "description": "<bool> The function generates a custom event for the specified chart."
+   },
+// MQL4 order functions
+   "OrderClose": {
+      "prefix": "orderclose",
+      "body": "OrderClose(${1:int ticket}, ${2:double lots}, ${3:double price}, ${4:int slippage}, ${5:color arrow_color=clrNone})$0",
+      "description": "<bool> Closes opened order."
+   },
+   "OrderCloseBy": {
+      "prefix": "orderclose",
+      "body": "OrderCloseBy(${1:int ticket}, ${2:int opposite}, ${3:color arrow_color=clrNone})$0",
+      "description": "<bool> Closes an opened order by another opposite opened order."
+   },
+
+   "OrderClosePrice": {
+      "prefix": "ordercloseprice",
+      "body": "OrderClosePrice()$0",
+      "description": "<double> Returns close price of the currently selected order. If the order is live this will return the price of which it is to be closed."
+   },
+   "OrderCloseTime": {
+      "prefix": "orderclosetime",
+      "body": "OrderCloseTime(${1:int ticket}, ${2:double lots}, ${3:double price}, ${4:int slippage}, ${5:color arrow_color})$0",
+      "description": "<datetime> Returns close time of the currently selected order."
+   },
+
+   "OrderComment": {
+      "prefix": "ordercomment",
+      "body": "OrderComment()$0",
+      "description": "<string> Returns comment of the currently selected order."
+   },
+
+   "OrderCommission": {
+      "prefix": "ordercommission",
+      "body": "OrderCommission()$0",
+      "description": "<double> Returns calculated commission of the currently selected order."
+   },
+
+   "OrderDelete": {
+      "prefix": "orderdelete",
+      "body": "OrderDelete(${1:int ticket}, ${5:color arrow_color=clrNone})$0",
+      "description": "<bool> Deletes previously opened pending order."
+   },
+
+   "OrderExpiration": {
+      "prefix": "orderexpiration",
+      "body": "OrderExpiration()$0",
+      "description": "<datetime> Returns expiration date of the selected pending order."
+   },
+
+   "OrderLots": {
+      "prefix": "orderlots",
+      "body": "OrderLots()$0",
+      "description": "<double> Returns amount of lots of the selected order."
+   },
+  
+   "OrderMagicNumber": {
+      "prefix": "ordermagicnumber",
+      "body": "OrderMagicNumber()$0",
+      "description": "<int> Returns an identifying (magic) number of the currently selected order."
+   },
+   "OrderModify": {
+      "prefix": "ordermodify",
+      "body": "OrderModify(${1:int ticket}, ${2:double price}, ${3:double stoploss}, ${4:double takeprofit}, ${5:datetime expiration}, ${6:color arrow_color=clrNone})$0",
+      "description": "<bool> Modification of characteristics of the previously opened or pending orders."
+   },
+   "OrderOpenPrice": {
+      "prefix": "orderopenprice",
+      "body": "OrderOpenPrice()$0",
+      "description": "<double> Returns open price of the currently selected order."
+   },
+   "OrderOpenTime": {
+      "prefix": "orderopentime",
+      "body": "OrderOpenTime()$0",
+      "description": "<datetime> Returns open time of the currently selected order."
+   },
+   "OrderPrint": {
+      "prefix": "orderprint",
+      "body": "OrderPrint()$0",
+      "description": "<void> Prints information about the selected order in the log."
+   },
+   "OrderProfit": {
+      "prefix": "orderprofit",
+      "body": "OrderProfit()$0",
+      "description": "<double> Returns profit of the currently selected order."
+   },
+   "OrderSelect": {
+      "prefix": "orderselect",
+      "body": "OrderSelect(${1:int position|int ticket}, ${2:SELECT_BY_POS|SELECT_BY_TICKET}, ${3:int pool=MODE_TRADES|MODE_HISTORY})$0",
+      "description": "<bool> The function selects an order for further processing."
+   },
+   "OrderSend": {
+      "prefix": "ordersend",
+      "body": "OrderSend(${1:string symbol}, ${2:int cmd}, ${3:double volume}, ${4:double price}, ${5:int slippage}, ${6:double stoploss}, ${7:double takeprofit}, ${8:string comment=NULL}, ${9:int magic=0}, ${10:datetime expiration=0}, ${11:color arrow_color=clrNONE})$0",
+      "description": "<int> The main function used to open market or place a pending order. Returns number of the ticket assigned to the order by the trade server or -1 if it fails."
+   },
+   "OrdersHistoryTotal": {
+      "prefix": "ordershistorytotal",
+      "body": "OrdersHistoryTotal)$0",
+      "description": "<int> Returns the number of closed orders in the account history loaded into the terminal. "
+   },
+   "OrderStopLoss": {
+      "prefix": "orderstoploss",
+      "body": "OrderStopLoss(${1:int ticket}, ${2:double lots}, ${3:double price}, ${4:int slippage}, ${5:color arrow_color})$0",
+      "description": "<double> Returns stoploss of the currently selected order."
+   },
+   "OrdersTotal": {
+      "prefix": "orderstotal",
+      "body": "OrdersTotal()$0",
+      "description": "<int> Returns the number of market and pending orders."
+   },
+   "OrderSwap": {
+      "prefix": "orderswap",
+      "body": "OrderSwap()$0",
+      "description": "<double> Returns swap value of the currently selected order."
+   },
+   "OrderTakeProfit": {
+      "prefix": "ordertakeprofit",
+      "body": "OrderTakeProfit()$0",
+      "description": "<datetime> Returns take profit value of the currently selected order."
+   },
+   "OrderSymbol": {
+      "prefix": "ordersymbol",
+      "body": "OrderSymbol()$0",
+      "description": "<string> Returns symbol of the currently selected order."
+   },
+   "OrderTicket": {
+      "prefix": "orderticket",
+      "body": "OrderTicket()$0",
+      "description": "<int> Returns order ticket number of the currently selected order."
+   },
+   "OrderType": {
+      "prefix": "ordertype",
+      "body": "OrderType()$0",
+      "description": "<int> Returns order operation type of the currently selected order. OP_BUY=buy-order, OP_SELL=sell-order, OP_BUYLIMIT=buy-limit, OP_BUYSTOP=buy-stop, OP_SELLLIMIT=sell-limit, OP_SELLSTOP=sell-stop."
+   },
+
+// iIndicators
+   "iATR":{
+      "prefix":"indicator",
+      "body":"iATR(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:int shift})$0",
+      "description":"<double> Calculates the Average True Range indicator and returns its value"
+   },
+   "iADX":{
+      "prefix":"indicator",
+      "body":"iADX(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:int applied_price}, ${5:int mode}, ${6:int shift})$0",
+      "description":"<double> Calculates the Average Directional Movement Index indicator and returns its value."
+   },
+   "iBands":{
+      "prefix":"indicator",
+      "body":"iBands(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:double deviation}, ${5:int bands_shift}, ${6:int applied_price}, ${7:int mode}, ${8:int shift})$0",
+      "description":"<double> Calculates the Bollinger Bands® indicator and returns its value."
+   },
+   "iCustom":{
+      "prefix":"indicator",
+      "body":"iCustom(${1:string symbol}, ${2:int timeframe}, ${3:string name}, ${4: ... }, ${5:int buffer_index}, ${6:int shift})$0",
+      "description":"<double> Calculates the specified custom indicator and returns its value. The custom indicator must be compiled (*.EX4 file) and be in the terminal_directory\\MQL4\\Indicators\\ directory."
+   },
+
+   "iMA":{
+      "prefix":"indicator",
+      "body":"iMA(${1:string symbol}, ${2:int timeframe}, ${3:int ma_period}, ${4:int ma_shift}, ${5:int ma_method}, ${6:int applied_price}, ${7:int shift})$0",
+      "description":"<double> Calculates the Moving Average indicator and returns its value. eg. iMA(NULL,0,13,8,MODE_SMMA,PRICE_MEDIAN,i);"
+   },
+
+   "iRSI":{
+      "prefix":"indicator",
+      "body":"iRSI(${1:string symbol}, ${2:int timeframe}, ${3:int period}, ${4:int applied_price}, ${5:int shift})$0",
+      "description":"<double> Calculates the RSI indicator and returns its value."
+   },
+   "iStochastic":{
+      "prefix":"indicator",
+      "body":"iStochastic(${1:string symbol}, ${2:int timeframe}, ${3:int Kperiod}, ${4:int Dperiod}, ${5:int slowing}, ${5:int method}, ${6:int price_field}, ${7:int mode}, ${8:int shift})$0",
+      "description":"<double> Calculates the Moving Average indicator and returns its value. eg. iMA(NULL,0,13,8,MODE_SMMA,PRICE_MEDIAN,i);"
+   },
+// chart event enums
+   "ENUM_CHART_EVENT":{
+      "prefix":"enumchartevent",
+      "body":"ENUM_CHART_EVENT",
+      "description":"There are 9 types of events that can be processed using the predefined function OnChartEvent(). "
+   },
+   "CHARTEVENT_KEYDOWN":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_KEYDOWN",
+      "description":"Keystrokes"
+   },
+   "CHARTEVENT_MOUSE_MOVE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_MOUSE_MOVE",
+      "description":"Mouse move, mouse clicks (if CHART_EVENT_MOUSE_MOVE=true is set for the chart)"
+   },
+   "CHARTEVENT_OBJECT_CREATE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_CREATE",
+      "description":"Graphical object created (if CHART_EVENT_OBJECT_CREATE=true is set for the chart)"
+   },
+   "CHARTEVENT_OBJECT_DELETE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_DELETE",
+      "description":"Graphical object deleted (if CHART_EVENT_OBJECT_DELETE=true is set for the chart)"
+   },
+   "CHARTEVENT_OBJECT_CHANGE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_CHANGE",
+      "description":"Graphical object property changed via the properties dialog"
+   },
+   "CHARTEVENT_CLICK":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CLICK",
+      "description":"Clicking on a graphical object"
+   },
+   "CHARTEVENT_OBJECT_DRAG":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_DRAG",
+      "description":"Drag and drop of a graphical object"
+   },
+   "CHARTEVENT_OBJECT_ENDEDIT":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_OBJECT_ENDEDIT",
+      "description":"End of text editing in the graphical object Edit"
+   },
+   "CHARTEVENT_CHART_CHANGE":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CHART_CHANGE",
+      "description":"Change of the chart size or modification of chart properties through the Properties dialog"
+   },
+   "CHARTEVENT_CUSTOM":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CUSTOM",
+      "description":"Initial number of an event from a range of custom events"
+   },
+   "CHARTEVENT_CUSTOM_LAST":{
+      "prefix":"_chartevent",
+      "body":"CHARTEVENT_CUSTOM_LAST",
+      "description":"The final number of an event from a range of custom events"
+   },
+
+
+// Common MQL4 code snippets
+   "for forward": {
+      "prefix": "for",
+      "body": [
+         "for(int i=0;i < ${1:int max_iter};i++)",
+         "{",
+         "   $0",
+         "}"
+      ],
+      "description": "mql4 orderselect loop"
+   },
+   "for backward": {
+      "prefix": "for",
+      "body": [
+         "for(int i=${1:int max_iter} - 1;i >= 0 ;i--)",
+         "{",
+         "   $0",
+         "}"
+      ],
+      "description": "mql4 orderselect loop"
+   },
+   "for OrdersTotal": {
+      "prefix": "for",
+      "body": [
+         "for(int i=OrdersTotal()-1;i>=0;i--)",
+         "{",
+         "   if(OrderSelect(i,SELECT_BY_POS) && OrderSymbol() == _Symbol ${1: other conditions})",
+         "   {",
+         "      $0",
+         "   }",
+         "}"
+      ],
+      "description": "mql4 orderselect loop"
+   },
+   "for OrdersHistoryTotal": {
+      "prefix": "for",
+      "body": [
+         "for(int i=OrdersHistoryTotal()-1;i>=0;i--)",
+         "{",
+         "   if(OrderSelect(i,SELECT_BY_POS,MODE_HISTORY) && OrderSymbol() == _Symbol ${1: other conditions})",
+         "   {",
+         "      $0",
+         "   }",
+         "}"
+      ],
+      "description": "mql4 orderselect loop"
+   },
+   "OnStart": {
+      "prefix": "onstart",
+      "body": [
+         "void OnStart()",
+         "{",
+         "   $0",
+         "}"
+      ],
+      "description": "Script entry point"
+   },
+   "Script_Template": {
+      "prefix": "mqltemplate_script",
+      "body": [
+         "//+------------------------------------------------------------------+",
+         "//| ${1:file_name.mq4}.mq4",
+         "//| Copyright 2017, ${2:Author Name}",
+         "//| ${3:Link}",
+         "//+------------------------------------------------------------------+",
+         "#property copyright \"Copyright 2017, ${2:Author Name}\"",
+         "#property link      \"${3:Link}\"",
+         "#property version   \"1.00\"",
+         "#property strict",
+         "$4",
+         " ",
+         " ",
+         "void OnStart()",
+         "{",
+         "   $5",
+         "}",
+         "$0"
+      ]
+   },
+   "Expert_Template": {
+      "prefix": "mqltemplate_expert",
+      "body": [
+         "//+------------------------------------------------------------------+",
+         "//| ${1:file_name.mq4}.mq4",
+         "//| Copyright 2017, ${2:Author Name}",
+         "//| ${3:Link}",
+         "//+------------------------------------------------------------------+",
+         "#property copyright \"Copyright 2017, ${2:Author Name}\"",
+         "#property link      \"${3:Link}\"",
+         "#property version   \"1.00\"",
+         "#property strict",
+         "$4",
+         " ",
+         " ",
+         "//+------------------------------------------------------------------+",
+         "//| Expert initialization function                                   |",
+         "//+------------------------------------------------------------------+",
+         "int OnInit()",
+         "{",
+         "   EventSetTimer(60);",
+         "   ",
+         "   return(INIT_SUCCEEDED);",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| Expert deinitialization function                                 |",
+         "//+------------------------------------------------------------------+",
+         ",void OnDeinit(const int reason)",
+         "{",
+         " EventKillTimer();",
+         "    ",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| Expert tick function                                             |",
+         "//+------------------------------------------------------------------+",
+         "void OnTick()",
+         "{",
+         "   ",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| Timer function                                                   |",
+         "//+------------------------------------------------------------------+",
+         "void OnTimer()",
+         "{",
+         "  ",
+         "}",
+         "//+------------------------------------------------------------------+",
+         "//| ChartEvent function                                              |",
+         "//+------------------------------------------------------------------+",
+         "void OnChartEvent(const int id,",
+         "                const long &lparam,",
+         "                const double &dparam,",
+         "                const string &sparam)",
+         "{",
+         " ",
+         "}",
+         "//+------------------------------------------------------------------+",
+      ],
+      "description":"expert advisor template"
+   },
+
+   "Function Header": {
+      "prefix": "functionheader",
+      "body": [
+         "//+------------------------------------------------------------------+",
+         "//| ${1:type} ${2:FuntionName} : ${3:description}",
+         "//+------------------------------------------------------------------+",
+         "${1:type} ${2:FunctionName}($4)",
+         "{",
+         "   $0",
+         "}"
+      ]
+   }
+
+   //------------------  Functions to convert time and price   ------------------
+ 
+   "ChartXYToTimePrice":{//(0, posX, posY, window, dt, price)"
+      "prefix": "ChartXYToTimePrice(int id, int cordX, int cordY, int window, datetime resTime, double resPrice)",
+      "body": "ChartXYToTimePrice(${1:int id}, ${2:int cordX}, ${3:int window}, ${4:datetime resTime}, ${5:double resPrice});",
+      "description": "Convert coordenate X|Y to time and price"
+   },
+
+   "ChartTimePriceToXY":{//(0, posX, posY, window, dt, price)"
+      "prefix": "ChartTimePriceToXY(int id, int window, datetime time1, double price1, int cordX, int cordY)",
+      "body": "ChartTimePriceToXY(${1:int id}, ${2:int window}, ${3:datetime time1}, ${4:double price1}, ${5:int cordX}, ${6:int cordY});",
+      "description": "Convert time and price to coordenate X|Y"
+   },
+
+   "ChartNavigate":{
+      "prefix": "ChartNavigate(int id, ENUM, int shift)",
+      "body": "ChartNavigate(${1:int id}, ${2:CHART_BEGIN | CHART_CURRENT_POS | CHART_END}, ${3:int shift});",
+      "description": "Shift the chart to specific candle"
+   },
+
+   //---------------------------------------------------------------------------------------------------------------------
+   
+   //Properties of the object ObjectCreate(0, "DRectV_" + (string)numV, OBJ_TEXT, window, dt, price);
+   "ObjectCreate":{
+      "prefix": "ObjectCreate(int idChart, string name, OBJTYPE, int window, datetime date, double price)",
+      "body": "ObjectSet(${1:int idChart}, ${2:string name}, ${3:OBJTYPE}, ${4:int window}, ${5:datetime date}, ${6:double price});",
+      "description": "Setter for the object"
+   },
+
+   "ObjectSet":{
+      "prefix": "objectSet(string name, OBJPROP, value)",
+      "body": "ObjectSet(${1:string name}, ${2:OBJPROP}, ${3:VALUE})",
+      "description": "Setter for the object"
+   },
+
+   
+   "OBJPROP_PRICE1":{
+      "prefix": "objprop_price1",
+      "body": "OBJPROP_PRICE1",
+      "description": "Set the property of price1 of the object"
+   },
+
+   "OBJPROP_PRICE2":{
+      "prefix": "objprop_price2",
+      "body": "OBJPROP_PRICE2",
+      "description": "Set the property of price2 of the object"
+   },
+
+   "OBJPROP_PRICE3":{
+      "prefix": "objprop_price3",
+      "body": "OBJPROP_PRICE3",
+      "description": "Set the property of price3 of the object"
+   },
+
+   "OBJPROP_TIME1":{
+      "prefix": "objprop_time1",
+      "body": "OBJPROP_TIME1",
+      "description": "Set the property of time1 of the object"
+   },
+
+   "OBJPROP_TIME2":{
+      "prefix": "objprop_time2",
+      "body": "OBJPROP_TIME2",
+      "description": "Set the property of time2 of the object"
+   },
+
+   "OBJPROP_TIME3":{
+      "prefix": "objprop_time3",
+      "body": "OBJPROP_TIME3",
+      "description": "Set the property of time3 of the object"
+   },
+
+   "OBJPROP_TEXT":{
+      "prefix": "objprop_text",
+      "body": "OBJPROP_TEXT",
+      "description": "Set the property of text of the object"
+   },
+
+   "OBJPROP_SELECTED":{
+      "prefix": "objprop_selected",
+      "body": "OBJPROP_SELECTED",
+      "description": "Set the property of the object selection"
+   },
+
+   "OBJPROP_ANGLE":{
+      "prefix": "objprop_angle",
+      "body": "OBJPROP_ANGLE",
+      "description": "Set the angle"
+   },
+
+   "OBJPROP_COLOR":{
+      "prefix": "objprop_color",
+      "body": "OBJPROP_COLOR",
+      "description": "Set the color"
+   },
+
+   "OBJPROP_XDISTANCE":{
+      "prefix": "objprop_xdistance",
+      "body": "OBJPROP_XDISTANCE",
+      "description": "Set the x distance in pixels"
+   },
+
+   "OBJPROP_YDISTANCE":{
+      "prefix": "objprop_ydistance",
+      "body": "OBJPROP_YDISTANCE",
+      "description": "Set the y distance in pixels"
+   },
+
+   "OBJPROP_CORNER":{
+      "prefix": "objprop_corner",
+      "body": "OBJPROP_CORNER",
+      "description": "Set the corner of the ancle"
+   },
+
+   "OBJPROP_BGCOLOR":{
+      "prefix": "objprop_bgcolor",
+      "body": "OBJPROP_BGCOLOR",
+      "description": "Set the background color"
+   },
+
+   "OBJPROP_FONTSIZE":{
+      "prefix": "objprop_fontsize",
+      "body": "OBJPROP_FONTSIZE",
+      "description": "Set the size of text"
+   },
+
+   "OBJPROP_YSIZE":{
+      "prefix": "objprop_ysize",
+      "body": "OBJPROP_YSIZE",
+      "description": "Set the y size of the object"
+   },
+
+   "OBJPROP_XSIZE":{
+      "prefix": "objprop_xsize",
+      "body": "OBJPROP_XSIZE",
+      "description": "Set the x size of the object"
+   },
+
+   "OBJPROP_LEVELTEXT":{
+      "prefix": "objprop_leveltext",
+      "body": "OBJPROP_LEVELTEXT",
+      "description": "Set the fibo level"
+   },   
+
+   "OBJPROP_NAME":{
+      "prefix": "objprop_name",
+      "body": "OBJPROP_NAME",
+      "description": "Set or get the name of the object"
+   },   
+
+   "OBJPROP_TIMEFRAMES":{
+      "prefix": "objprop_timeframes",
+      "body": "OBJPROP_TIMEFRAMES",
+      "description": "Set or get the timeframe of the object"
+   },   
+
+   "OBJPROP_WITH":{
+      "prefix": "objprop_with",
+      "body": "OBJPROP_WITH",
+      "description": "Set the with of the object"
+   },
+
+   "OBJPROP_FONT":{
+      "prefix": "objprop_font",
+      "body": "OBJPROP_FONT",
+      "description": "Set the font of the object"
+   },
+
+   "OBJPROP_HIDDEN":{
+      "prefix": "objprop_hidden",
+      "body": "OBJPROP_HIDDEN",
+      "description": "Set the visibility of an object"
+   },
+
+   "OBJPROP_SELECTABLE":{
+      "prefix": "objprop_selectable",
+      "body": "OBJPROP_SELECTABLE",
+      "description": "Set the if the object can be selected"
+   },
+
+   "CHART_WIDTH_IN_PIXELS":{
+      "prefix": "chart_with_in_pixels",
+      "body": "CHART_WIDTH_IN_PIXELS",
+      "description": "Returns the value of the number of pixels in the <--x-->"
+   },
+
+   "ObjectsTotal":{
+      "prefix": "Objectstotal",
+      "body": "ObjectsTotal()",
+      "description": "Returns the number of objects in the chart (all periods)"
+   },
+
+   "ObjectName":{
+      "prefix": "ObjectName(object)",
+      "body": "ObjectName(${1: object})",
+      "description": "Returns the number of objects in the chart (all periods)"
+   },
+
+
+}
