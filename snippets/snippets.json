@@ -37,6 +37,8 @@
       "body": "#include <${1:file_name.mqh}>$0",
       "description": "preprocessor include directive"
    },
+
+
    "dynamic_cast":{
       "prefix":"dynamic_cast",
       "body":"dynamic_cast<${1:type-id}>(${2:expression})$0",
@@ -1340,6 +1342,7 @@
          "#property strict",
          "$4",
          " ",
+         " ",
          "//+------------------------------------------------------------------+",
          "//| Expert initialization function                                   |",
          "//+------------------------------------------------------------------+",
@@ -1398,4 +1401,204 @@
          "}"
       ]
    }
+
+   //------------------  Functions to convert time and price   ------------------
+ 
+   "ChartXYToTimePrice":{//(0, posX, posY, window, dt, price)"
+      "prefix": "ChartXYToTimePrice(int id, int cordX, int cordY, int window, datetime resTime, double resPrice)",
+      "body": "ChartXYToTimePrice(${1:int id}, ${2:int cordX}, ${3:int window}, ${4:datetime resTime}, ${5:double resPrice});",
+      "description": "Convert coordenate X|Y to time and price"
+   },
+
+   "ChartTimePriceToXY":{//(0, posX, posY, window, dt, price)"
+      "prefix": "ChartTimePriceToXY(int id, int window, datetime time1, double price1, int cordX, int cordY)",
+      "body": "ChartTimePriceToXY(${1:int id}, ${2:int window}, ${3:datetime time1}, ${4:double price1}, ${5:int cordX}, ${6:int cordY});",
+      "description": "Convert time and price to coordenate X|Y"
+   },
+
+   "ChartNavigate":{
+      "prefix": "ChartNavigate(int id, ENUM, int shift)",
+      "body": "ChartNavigate(${1:int id}, ${2:CHART_BEGIN | CHART_CURRENT_POS | CHART_END}, ${3:int shift});",
+      "description": "Shift the chart to specific candle"
+   },
+
+   //---------------------------------------------------------------------------------------------------------------------
+   
+   //Properties of the object ObjectCreate(0, "DRectV_" + (string)numV, OBJ_TEXT, window, dt, price);
+   "ObjectCreate":{
+      "prefix": "ObjectCreate(int idChart, string name, OBJTYPE, int window, datetime date, double price)",
+      "body": "ObjectSet(${1:int idChart}, ${2:string name}, ${3:OBJTYPE}, ${4:int window}, ${5:datetime date}, ${6:double price});",
+      "description": "Setter for the object"
+   },
+
+   "ObjectSet":{
+      "prefix": "objectSet(string name, OBJPROP, value)",
+      "body": "ObjectSet(${1:string name}, ${2:OBJPROP}, ${3:VALUE})",
+      "description": "Setter for the object"
+   },
+
+   
+   "OBJPROP_PRICE1":{
+      "prefix": "objprop_price1",
+      "body": "OBJPROP_PRICE1",
+      "description": "Set the property of price1 of the object"
+   },
+
+   "OBJPROP_PRICE2":{
+      "prefix": "objprop_price2",
+      "body": "OBJPROP_PRICE2",
+      "description": "Set the property of price2 of the object"
+   },
+
+   "OBJPROP_PRICE3":{
+      "prefix": "objprop_price3",
+      "body": "OBJPROP_PRICE3",
+      "description": "Set the property of price3 of the object"
+   },
+
+   "OBJPROP_TIME1":{
+      "prefix": "objprop_time1",
+      "body": "OBJPROP_TIME1",
+      "description": "Set the property of time1 of the object"
+   },
+
+   "OBJPROP_TIME2":{
+      "prefix": "objprop_time2",
+      "body": "OBJPROP_TIME2",
+      "description": "Set the property of time2 of the object"
+   },
+
+   "OBJPROP_TIME3":{
+      "prefix": "objprop_time3",
+      "body": "OBJPROP_TIME3",
+      "description": "Set the property of time3 of the object"
+   },
+
+   "OBJPROP_TEXT":{
+      "prefix": "objprop_text",
+      "body": "OBJPROP_TEXT",
+      "description": "Set the property of text of the object"
+   },
+
+   "OBJPROP_SELECTED":{
+      "prefix": "objprop_selected",
+      "body": "OBJPROP_SELECTED",
+      "description": "Set the property of the object selection"
+   },
+
+   "OBJPROP_ANGLE":{
+      "prefix": "objprop_angle",
+      "body": "OBJPROP_ANGLE",
+      "description": "Set the angle"
+   },
+
+   "OBJPROP_COLOR":{
+      "prefix": "objprop_color",
+      "body": "OBJPROP_COLOR",
+      "description": "Set the color"
+   },
+
+   "OBJPROP_XDISTANCE":{
+      "prefix": "objprop_xdistance",
+      "body": "OBJPROP_XDISTANCE",
+      "description": "Set the x distance in pixels"
+   },
+
+   "OBJPROP_YDISTANCE":{
+      "prefix": "objprop_ydistance",
+      "body": "OBJPROP_YDISTANCE",
+      "description": "Set the y distance in pixels"
+   },
+
+   "OBJPROP_CORNER":{
+      "prefix": "objprop_corner",
+      "body": "OBJPROP_CORNER",
+      "description": "Set the corner of the ancle"
+   },
+
+   "OBJPROP_BGCOLOR":{
+      "prefix": "objprop_bgcolor",
+      "body": "OBJPROP_BGCOLOR",
+      "description": "Set the background color"
+   },
+
+   "OBJPROP_FONTSIZE":{
+      "prefix": "objprop_fontsize",
+      "body": "OBJPROP_FONTSIZE",
+      "description": "Set the size of text"
+   },
+
+   "OBJPROP_YSIZE":{
+      "prefix": "objprop_ysize",
+      "body": "OBJPROP_YSIZE",
+      "description": "Set the y size of the object"
+   },
+
+   "OBJPROP_XSIZE":{
+      "prefix": "objprop_xsize",
+      "body": "OBJPROP_XSIZE",
+      "description": "Set the x size of the object"
+   },
+
+   "OBJPROP_LEVELTEXT":{
+      "prefix": "objprop_leveltext",
+      "body": "OBJPROP_LEVELTEXT",
+      "description": "Set the fibo level"
+   },   
+
+   "OBJPROP_NAME":{
+      "prefix": "objprop_name",
+      "body": "OBJPROP_NAME",
+      "description": "Set or get the name of the object"
+   },   
+
+   "OBJPROP_TIMEFRAMES":{
+      "prefix": "objprop_timeframes",
+      "body": "OBJPROP_TIMEFRAMES",
+      "description": "Set or get the timeframe of the object"
+   },   
+
+   "OBJPROP_WITH":{
+      "prefix": "objprop_with",
+      "body": "OBJPROP_WITH",
+      "description": "Set the with of the object"
+   },
+
+   "OBJPROP_FONT":{
+      "prefix": "objprop_font",
+      "body": "OBJPROP_FONT",
+      "description": "Set the font of the object"
+   },
+
+   "OBJPROP_HIDDEN":{
+      "prefix": "objprop_hidden",
+      "body": "OBJPROP_HIDDEN",
+      "description": "Set the visibility of an object"
+   },
+
+   "OBJPROP_SELECTABLE":{
+      "prefix": "objprop_selectable",
+      "body": "OBJPROP_SELECTABLE",
+      "description": "Set the if the object can be selected"
+   },
+
+   "CHART_WIDTH_IN_PIXELS":{
+      "prefix": "chart_with_in_pixels",
+      "body": "CHART_WIDTH_IN_PIXELS",
+      "description": "Returns the value of the number of pixels in the <--x-->"
+   },
+
+   "ObjectsTotal":{
+      "prefix": "Objectstotal",
+      "body": "ObjectsTotal()",
+      "description": "Returns the number of objects in the chart (all periods)"
+   },
+
+   "ObjectName":{
+      "prefix": "ObjectName(object)",
+      "body": "ObjectName(${1: object})",
+      "description": "Returns the number of objects in the chart (all periods)"
+   },
+
+
 }
