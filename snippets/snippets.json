@@ -703,6 +703,96 @@
       "body": "AccountInfoString(${1:ENUM_ACOUNT_INFO_STRING  property_id})$0",
       "description": "<string> Returns the value of the corresponding account property."
    },
+   "AccountBalance": {
+      "prefix": "accountbalance",
+      "body": "AccountBalance()$0",
+      "description": "<double> Returns balance value of the current account."
+   },
+   "AccountCredit": {
+      "prefix": "accountcredit",
+      "body": "AccountCredit()$0",
+      "description": "<double> Returns credit value of the current account."
+   },
+   "AccountCompany": {
+      "prefix": "accountcompany",
+      "body": "AccountCompany()$0",
+      "description": "<string> Returns the brokerage company name where the current account was registered."
+   },
+   "AccountCurrency": {
+      "prefix": "accountcurrency",
+      "body": "AccountCurrency()$0",
+      "description": "<string> Returns currency name of the current account."
+   },
+   "AccountEquity": {
+      "prefix": "accountequity",
+      "body": "AccountEquity()$0",
+      "description": "<double> Returns equity value of the current account."
+   },
+   "AccountFreeMargin": {
+      "prefix": "accountfreemargin",
+      "body": "AccountFreeMargin()$0",
+      "description": "<double> Returns free margin value of the current account." 
+   },
+   "AccountFreeMarginCheck": {
+      "prefix": "accountfreemargincheck",
+      "body": "AccountFreeMarginCheck(${1:string symbol}, ${2:int trade_operation}, ${3:double volume})$0",
+      "description": "<double> Returns free margin that remains after the specified order has been opened at the current price on the current account."
+   },
+   "AccountFreeMarginMode": {
+      "prefix": "accountfreemarginmode",
+      "body": "AccountFreeMarginMode()$0",
+      "description":["<double> Returns the calculation mode of free margin allowed to open orders on the current account.",
+         "The calculation mode can take the following values",
+         "0 - floating profit/loss is not used for calculation",
+         "1 - both floating profit and loss on opened orders on the current account are used for free margin calculation",
+         "2 - only profit value is used for calculation, the current loss on opened orders is not considered",
+         "3 - only loss value is used for calculation, the current floating profit on opened orders is not considered."
+      ]
+   },
+   "AccountLeverage": {
+      "prefix": "accountleverage",
+      "body": "AccountLeverage()$0",
+      "description": "<int> Returns leverage of the current account."
+   },
+   "AccountMargin": {
+      "prefix": "accountmargin",
+      "body": "AccountMargin()$0",
+      "description": "<double> Returns margin value of the current account."
+   },
+   "AccountName": {
+      "prefix": "accountname",
+      "body": "AccountName()$0",
+      "description": "<string> Returns the current account name."
+   },
+   "AccountNumber": {
+      "prefix": "accountnumber",
+      "body": "AccountNumber()$0",
+      "description": "<int> Returns the current account number."
+   },
+   "AccountProfit": {
+      "prefix": "accountprofit",
+      "body": "AccountProfit()$0",
+      "description": "<double> Returns profit value of the current account."
+   },
+   "AccountServer": {
+      "prefix": "accountserver",
+      "body": "AccountServer()$0",
+      "description": "<string> Returns the connected server name."
+   },
+   "AccountStopoutLevel": {
+      "prefix": "accountstopoutlevel",
+      "body": "AccountStopoutLevel()$0",
+      "description": "<int> Returns the value of the Stop Out level."
+   },
+   "AccountStopoutMode": {
+      "prefix": "accountstopoutmode",
+      "body": "AccountStopoutMode()$0",
+      "description":["<int> Returns the calculation mode for the Stop Out level.",
+         "Calculation mode can take the following values:",
+         "0 - calculation of percentage ratio between margin and equity;",
+         "1 - comparison of the free margin level to the absolute value."
+      ]
+   },
 // Account int enums
    "ACCOUNT_LOGIN": {
       "prefix": "_account_int",
